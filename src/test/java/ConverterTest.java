@@ -6,7 +6,7 @@ import java.util.Currency;
 * Converter Tester. 
 * 
 * @author Tim
-* @since <pre>Oct 22, 2020</pre> 
+* @since Oct 22, 2020
 * @version 1.0 
 */ 
 public class ConverterTest { 
