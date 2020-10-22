@@ -1,5 +1,5 @@
-package main.java.controller;
+package controller;
 
 public class MainController {
-    //TODO - implement main.java.controller
+    //TODO - implement controller
 }
