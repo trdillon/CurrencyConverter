@@ -32,7 +32,7 @@ public class Converter {
         int responseCode = connection.getResponseCode();
 
         //if we get OK response then parse the response to get the number
-        if (responseCode == 200) {
+        if (responseCode == HttpURLConnection.HTTP_OK) {
             InputStream stream
                     = (InputStream) connection.getContent();
             Scanner scanner = new Scanner(stream);
