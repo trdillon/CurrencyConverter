@@ -1,0 +1,11 @@
+.sidebar {
+    -fx-background-color: #284B63;
+}
+
+.toolbar {
+    -fx-background-color: #E5E5E5;
+}
+
+.main {
+    -fx-background-color: #D9D9D9;
+}
