@@ -15,7 +15,7 @@ public class Converter {
     private static final String USER_AGENT =
             "Java/" + System.getProperty("java.version");
 
-    static double rate(Currency from, Currency to) throws IOException {
+    public static double rate(Currency from, Currency to) throws IOException {
         //build the query - TODO - don't need to retrieve the API key for every call
         String queryPath
                 = "https://free.currconv.com/api/v7/convert?q="
@@ -47,6 +47,5 @@ public class Converter {
                     + " returned status " + responseCode;
             throw new RuntimeException(errMsg);
         }
-        //TODO - test converter function
     }
 }

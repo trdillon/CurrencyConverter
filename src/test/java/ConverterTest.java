@@ -1,5 +1,9 @@
-import org.junit.Test;
+import api.Converter;
 
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import java.io.IOException;
 import java.util.Currency;
 
 /** 
@@ -17,22 +21,37 @@ public class ConverterTest {
     private static final Currency HKD
             = Currency.getInstance("HKD");
 
+    private static final Currency JPY
+            = Currency.getInstance("JPY");
+
     private static final double TEST_DELTA = 0.001;
-/**
-*
-* Method: rate(Currency from, Currency to)
-*
-*/
+
 @Test
-public void testUSDtoHKD() {
-    double expected = 7.8;
-    //double actual = Converter.rate();
+public void testUSDtoHKD() throws IOException {
+    double expected = 7.75;
+    double actual = Converter.rate(USD, HKD);
+    assertEquals(expected, actual, TEST_DELTA);
 }
 
 @Test
-public void testRate() throws Exception {
-//TODO: Test goes here... 
+public void testHKDtoUSD() throws IOException {
+    double expected = 0.13;
+    double actual = Converter.rate(HKD, USD);
+    assertEquals(expected, actual, TEST_DELTA);
 }
 
+@Test
+public void testRate() throws IOException {
+    System.out.println("Rate: ");
+    double USDtoJPY = Converter.rate(USD, JPY);
+    double JPYtoUSD = Converter.rate(JPY, USD);
+
+    System.out.println("US Dollars to Japanese Yen is: " + USDtoJPY);
+    System.out.println("Japanese Yen to US Dollars is: " + JPYtoUSD);
+
+    double expected = 1.0;
+    double actual = USDtoJPY * JPYtoUSD;
+    assertEquals(expected, actual, TEST_DELTA);
+}
 
 }
