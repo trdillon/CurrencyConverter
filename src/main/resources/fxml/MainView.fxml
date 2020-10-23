@@ -2,6 +2,8 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,9 +14,9 @@
             <Font name="System Bold" size="10.0" />
          </font>
       </Label>
-      <Label layoutX="174.0" layoutY="12.0" text="Currency Converter">
+      <Label layoutX="197.0" layoutY="10.0" text="Currency Converter">
          <font>
-            <Font size="18.0" />
+            <Font name="Candara Bold" size="24.0" />
          </font></Label>
       <FontAwesomeIconView glyphName="QUESTION" layoutX="670.0" layoutY="30.0" size="18" styleClass="fa-icon">
          <font>
@@ -32,5 +34,12 @@
          </font>
       </FontAwesomeIconView>
    </AnchorPane>
-   <AnchorPane layoutY="185.0" prefHeight="200.0" prefWidth="100.0" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   <AnchorPane layoutY="185.0" prefHeight="200.0" prefWidth="110.0" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+            <image>
+               <Image url="@../img/logo.png" />
+            </image>
+         </ImageView>
+      </children></AnchorPane>
 </AnchorPane>
