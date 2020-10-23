@@ -17,10 +17,9 @@ public class MainController {
     @FXML
     private FontAwesomeIconView btnExit;
 
-    //TODO - fix the NullPointerException preventing loadScreen
     public void loadScreen(String screen) throws IOException {
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("fxml/" + screen + ".fxml"));
+        root = FXMLLoader.load(getClass().getResource("/fxml/" + screen + ".fxml"));
         bp.setCenter(root);
     }
 
