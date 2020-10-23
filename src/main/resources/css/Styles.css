@@ -34,22 +34,33 @@
 
 .toolbar-icon {
     -fx-fill: #4A7C7B;
+    -fx-font-size: 18px;
 }
 
 .notify-num {
     -fx-background-color: #F02E54;
     -fx-background-radius: 100%;
     -fx-text-fill: #FFF;
+    -fx-font-family: "System";
+    -fx-font-weight: Bold;
+    -fx-font-size: 10px;
 }
 
 .font-small {
-    -fx-font-family: System;
+    -fx-font-family: "System";
     -fx-font-size: 16px;
     -fx-fill: #4A7C7B;
 }
 
 .font-header {
-    -fx-font-family: Consolas;
+    -fx-font-family: "Consolas";
     -fx-font-size: 36px;
-    -fx-fill: #4A7C7B;
+    -fx-text-fill: #4A7C7B;
+}
+
+.font-title {
+    -fx-font-family: "Agency FB";
+    -fx-font-weight: Bold;
+    -fx-font-size: 36px;
+    -fx-text-fill: #4A7C7B;
 }
