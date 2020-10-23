@@ -2,71 +2,64 @@ package controller;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainController {
 
     @FXML
+    private BorderPane bp;
+
+    @FXML
     private FontAwesomeIconView btnExit;
 
-    @FXML
-    private FontAwesomeIconView btnHelp;
-
-    @FXML
-    private FontAwesomeIconView btnSettings;
-
-    @FXML
-    private FontAwesomeIconView btnNotify;
-
-    @FXML
-    private FontAwesomeIconView btnHome;
-
-    @FXML
-    private FontAwesomeIconView btnHistory;
-
-    @FXML
-    private FontAwesomeIconView btnFavorites;
-
-    @FXML
-    private FontAwesomeIconView btnData;
-
-    @FXML
-    private void goHelp() {
-        //TODO - help screen
+    public void loadScreen(String screen) throws IOException {
+        Parent root;
+        root = FXMLLoader.load(getClass().getResource(screen + ".fxml"));
+        bp.setCenter(root);
     }
 
     @FXML
-    private void goSettings() {
-        //TODO - settings screen
+    private void handleHelp() throws IOException {
+        loadScreen("Help");
     }
 
     @FXML
-    private void goNotify() {
-        //TODO - notification screen
+    private void handleSettings() throws IOException {
+        loadScreen("Settings");
     }
 
     @FXML
-    private void goHome() {
-        //TODO - home screen
+    private void handleNotify() throws IOException {
+        loadScreen("Notify");
     }
 
     @FXML
-    private void goHistory() {
-        //TODO - history screen
+    private void handleHome() throws IOException {
+        loadScreen("Home");
     }
 
     @FXML
-    private void goFavorites() {
-        //TODO - favorites screen
+    private void handleHistory() throws IOException {
+        loadScreen("History");
     }
 
     @FXML
-    private void goData() {
-        //TODO - data screen
+    private void handleFavorites() throws IOException {
+        loadScreen("Favorites");
     }
 
     @FXML
-    private void exitApp() {
+    private void handleData() throws IOException {
+        loadScreen("Data");
+    }
+
+    @FXML
+    private void handleExit() {
         Stage stage = (Stage) btnExit.getScene().getWindow();
         stage.close();
     }

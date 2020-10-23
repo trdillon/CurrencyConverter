@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
@@ -20,28 +21,28 @@
             <Font name="Candara Bold" size="24.0" />
          </font></Label>
       <HBox layoutX="630.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView fx:id="btnHelp" glyphName="QUESTION_CIRCLE" size="18" styleClass="toolbar-icon">
+         <FontAwesomeIconView fx:id="btnHelp" glyphName="QUESTION_CIRCLE" onMouseClicked="#handleHelp" size="18" styleClass="toolbar-icon">
             <font>
                <Font size="18.0" />
             </font>
          </FontAwesomeIconView>
       </HBox>
       <HBox layoutX="590.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView fx:id="btnSettings" glyphName="GEAR" size="18" styleClass="toolbar-icon">
+         <FontAwesomeIconView fx:id="btnSettings" glyphName="GEAR" onMouseClicked="#handleSettings" size="18" styleClass="toolbar-icon">
             <font>
                <Font size="18.0" />
             </font>
          </FontAwesomeIconView>
       </HBox>
       <HBox layoutX="550.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView fx:id="btnNotify" glyphName="BELL" size="18" styleClass="toolbar-icon">
+         <FontAwesomeIconView fx:id="btnNotify" glyphName="BELL" onMouseClicked="#handleNotify" size="18" styleClass="toolbar-icon">
             <font>
                <Font size="18.0" />
             </font>
          </FontAwesomeIconView>
       </HBox>
       <HBox layoutX="670.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView fx:id="btnExit" glyphName="CLOSE" onMouseClicked="#exitApp" size="18" styleClass="toolbar-icon">
+         <FontAwesomeIconView fx:id="btnExit" glyphName="CLOSE" onMouseClicked="#handleExit" size="18" styleClass="toolbar-icon">
             <font>
                <Font size="18.0" />
             </font>
@@ -53,17 +54,19 @@
          <Image url="@../img/logo.png" />
       </ImageView>
       <HBox layoutX="38.0" layoutY="200.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView fx:id="btnHome" glyphName="HOME" size="36" styleClass="sidebar-icon" />
+         <FontAwesomeIconView fx:id="btnHome" glyphName="HOME" onMouseClicked="#handleHome" size="36" styleClass="sidebar-icon" />
       </HBox>
       <HBox layoutX="38.0" layoutY="500.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView fx:id="btnData" glyphName="BAR_CHART" size="36" styleClass="sidebar-icon" />
+         <FontAwesomeIconView fx:id="btnData" glyphName="BAR_CHART" onMouseClicked="#handleData" size="36" styleClass="sidebar-icon" />
       </HBox>
       <HBox layoutX="38.0" layoutY="400.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView fx:id="btnFavorites" glyphName="HEART" size="36" styleClass="sidebar-icon" />
+         <FontAwesomeIconView fx:id="btnFavorites" glyphName="HEART" onMouseClicked="#handleFavorites" size="36" styleClass="sidebar-icon" />
       </HBox>
       <HBox layoutX="38.0" layoutY="300.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView fx:id="btnHistory" glyphName="HISTORY" size="36" styleClass="sidebar-icon" />
+         <FontAwesomeIconView fx:id="btnHistory" glyphName="HISTORY" onMouseClicked="#handleHistory" size="36" styleClass="sidebar-icon" />
       </HBox>
    </AnchorPane>
-   <AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   <AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" BorderPane.alignment="CENTER">
+      <BorderPane fx:id="bp" layoutX="245.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </AnchorPane>
 </AnchorPane>
