@@ -17,45 +17,46 @@ public class MainController {
     @FXML
     private FontAwesomeIconView btnExit;
 
+    //TODO - fix the NullPointerException preventing loadScreen
     public void loadScreen(String screen) throws IOException {
         Parent root;
-        root = FXMLLoader.load(getClass().getResource(screen + ".fxml"));
+        root = FXMLLoader.load(getClass().getResource("fxml/" + screen + ".fxml"));
         bp.setCenter(root);
     }
 
     @FXML
     private void handleHelp() throws IOException {
-        loadScreen("Help");
+        loadScreen("HelpView");
     }
 
     @FXML
     private void handleSettings() throws IOException {
-        loadScreen("Settings");
+        loadScreen("SettingsView");
     }
 
     @FXML
     private void handleNotify() throws IOException {
-        loadScreen("Notify");
+        loadScreen("NotifyView");
     }
 
     @FXML
     private void handleHome() throws IOException {
-        loadScreen("Home");
+        loadScreen("HomeView");
     }
 
     @FXML
     private void handleHistory() throws IOException {
-        loadScreen("History");
+        loadScreen("HistoryView");
     }
 
     @FXML
     private void handleFavorites() throws IOException {
-        loadScreen("Favorites");
+        loadScreen("FavoritesView");
     }
 
     @FXML
     private void handleData() throws IOException {
-        loadScreen("Data");
+        loadScreen("DataView");
     }
 
     @FXML

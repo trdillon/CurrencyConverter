@@ -50,7 +50,7 @@
       </HBox>
    </AnchorPane>
    <AnchorPane layoutY="185.0" prefHeight="200.0" prefWidth="110.0" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="4.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="14.0">
          <Image url="@../img/logo.png" />
       </ImageView>
       <HBox layoutX="38.0" layoutY="200.0" styleClass="sidebar-btn">
@@ -66,7 +66,10 @@
          <FontAwesomeIconView glyphName="HISTORY" onMouseClicked="#handleHistory" size="36" styleClass="sidebar-icon" />
       </HBox>
    </AnchorPane>
-   <AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" BorderPane.alignment="CENTER">
-      <BorderPane fx:id="bp" layoutX="245.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   <AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0"
+               AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" BorderPane.alignment="CENTER">
+      <BorderPane fx:id="bp" layoutX="245.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0"/>
    </AnchorPane>
 </AnchorPane>
