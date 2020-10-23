@@ -9,3 +9,13 @@
 .main {
     -fx-background-color: #D9D9D9;
 }
+
+.fa-icon {
+    -fx-fill: #505050;
+}
+
+.noti-num {
+    -fx-background-color: #F02E54;
+    -fx-background-radius: 100%;
+    -fx-text-fill: #FFF;
+}
