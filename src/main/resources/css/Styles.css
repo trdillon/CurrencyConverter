@@ -1,20 +1,42 @@
+.main {
+    -fx-background-color: #263238;
+}
+
 .sidebar {
-    -fx-background-color: #284B63;
+    -fx-background-color: #1E272C;
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+}
+
+.sidebar-btn:hover {
+    -fx-border-color:  #9ADA45;
+    -fx-border-radius: 0px 0px 0px 2px;
+}
+
+.sidebar-icon {
+    -fx-fill: #4A7C7B;
 }
 
 .toolbar {
-    -fx-background-color: #E5E5E5;
+    -fx-background-color: #263238;
 }
 
-.main {
-    -fx-background-color: #D9D9D9;
+.toolbar-btn {
+    -fx-background-color: transparent;
 }
 
-.fa-icon {
-    -fx-fill: #505050;
+.toolbar-btn:hover {
+    -fx-border-color:  #9ADA45;
+    -fx-border-radius: 0px 0px 0px 2px;
 }
 
-.noti-num {
+.toolbar-icon {
+    -fx-fill: #4A7C7B;
+}
+
+.notify-num {
     -fx-background-color: #F02E54;
     -fx-background-radius: 100%;
     -fx-text-fill: #FFF;
