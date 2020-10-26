@@ -4,7 +4,7 @@ public class APIConfig {
 
     private String apiKeyCurrencyConverter;
     private String apiKeyCurrencyLayer;
-    private String apiKeyOpenExchange;
+    private String apiKeyOpenExchangeRates;
 
     public String getApiKeyCurrencyConverter() {
         return apiKeyCurrencyConverter;
@@ -22,11 +22,11 @@ public class APIConfig {
         this.apiKeyCurrencyLayer = apiKeyCurrencyLayer;
     }
 
-    public String getApiKeyOpenExchange() {
-        return apiKeyOpenExchange;
+    public String getApiKeyOpenExchangeRates() {
+        return apiKeyOpenExchangeRates;
     }
 
-    public void setApiKeyOpenExchange(String apiKeyOpenExchange) {
-        this.apiKeyOpenExchange = apiKeyOpenExchange;
+    public void setApiKeyOpenExchangeRates(String apiKeyOpenExchangeRates) {
+        this.apiKeyOpenExchangeRates = apiKeyOpenExchangeRates;
     }
 }

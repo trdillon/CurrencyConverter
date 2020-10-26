@@ -24,7 +24,7 @@ public class APIConfigBuilder {
     }
 
     public APIConfigBuilder buildOpenExchange(String apiKey) {
-        config.setApiKeyOpenExchange(apiKey);
+        config.setApiKeyOpenExchangeRates(apiKey);
 
         return this;
     }
@@ -32,7 +32,7 @@ public class APIConfigBuilder {
     public APIConfig build() {
         if (config.getApiKeyCurrencyConverter() == null &&
             config.getApiKeyCurrencyLayer() == null &&
-            config.getApiKeyOpenExchange() == null) {
+            config.getApiKeyOpenExchangeRates() == null) {
             throw new ConverterException(ErrorMessages.API_KEY_ERROR);
         }
 
