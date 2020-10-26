@@ -14,7 +14,7 @@ public class CurrencyConverter implements ConverterInterface {
     public Double rate(String apiKey, Currency from, Currency to) throws IOException {
         String results = NetworkUtil.getResultsByUrl(getQueryString(apiKey, from, to), true);
 
-        // results should be like {"USD_JPY":0.0000999} so we split at the ":" to parse the number
+        // expected responses are like {"USD_JPY":0.0000999} so we split at the ":" to parse the results
         String[] parseResults = results.split(":");
         // if the API response changes or doesn't return an expected response then throw service exception
         if (parseResults.length != 2) {
