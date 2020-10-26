@@ -17,6 +17,7 @@ public class MainController {
     @FXML
     private FontAwesomeIconView btnExit;
 
+    //TODO - launch HomeView on app start
     public void loadScreen(String screen) throws IOException {
         Parent root;
         root = FXMLLoader.load(getClass().getResource("/fxml/" + screen + ".fxml"));
@@ -58,6 +59,7 @@ public class MainController {
         loadScreen("DataView");
     }
 
+    //TODO - save history data on exit for data analysis
     @FXML
     private void handleExit() {
         Stage stage = (Stage) btnExit.getScene().getWindow();
