@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.HomeController">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <Label layoutX="265.0" layoutY="14.0" styleClass="font-header" text="Home" />
+                <Label layoutX="415.0" layoutY="136.0" styleClass="font-small" text="Convert To" />
+                <Label layoutX="112.0" layoutY="136.0" styleClass="font-small" text="Convert From" />
+                <ImageView fx:id="imgFromFlag" fitHeight="30.0" fitWidth="50.0" layoutX="54.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="imgToFlag" fitHeight="30.0" fitWidth="50.0" layoutX="354.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+                <ChoiceBox layoutX="112.0" layoutY="170.0" prefWidth="150.0" />
+                <ChoiceBox layoutX="418.0" layoutY="170.0" prefWidth="150.0" />
+                <Button layoutX="493.0" layoutY="386.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="123.0" styleClass="button-orange" text="Convert" />
+                <Label fx:id="lblConvertResult" layoutX="195.0" layoutY="258.0" prefHeight="74.0" prefWidth="310.0" styleClass="font-header" text="Results Here" />
+        </AnchorPane>
+</AnchorPane>
