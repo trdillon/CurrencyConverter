@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HistoryController">
+    <Label layoutX="276.0" layoutY="14.0" styleClass="font-header" text="History" />
+    <Label layoutX="206.0" layoutY="108.0" styleClass="font-small" text="Currency conversion results this session" />
+    <TableView fx:id="tvHistory" layoutX="86.0" layoutY="143.0" prefHeight="343.0" prefWidth="518.0">
+        <columns>
+            <TableColumn fx:id="tcHistoryFrom" prefWidth="180.0" text="From" />
+            <TableColumn fx:id="tcHistoryTo" prefWidth="180.0" text="To" />
+            <TableColumn fx:id="tcHistoryResults" prefWidth="174.0" text="Results" />
+        </columns>
+    </TableView>
+</AnchorPane>
