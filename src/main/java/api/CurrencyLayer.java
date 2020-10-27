@@ -44,10 +44,14 @@ public class CurrencyLayer implements ConverterInterface {
         }
 
         try {
-            final String fromRate = parseResultsMore[0].replaceAll("\"", "")
-                    .replace("{", "").split(":")[1];
-            final String toRate = parseResultsMore[1].replaceAll("\"", "")
-                    .replace("}", "").split(":")[1];
+            final String fromRate = parseResultsMore[0]
+                    .replaceAll("\"", "")
+                    .replace("{", "")
+                    .split(":")[1];
+            final String toRate = parseResultsMore[1]
+                    .replaceAll("\"", "")
+                    .replace("}", "")
+                    .split(":")[1];
 
             return Double.parseDouble(toRate) / Double.parseDouble(fromRate);
         }
