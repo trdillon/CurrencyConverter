@@ -3,9 +3,7 @@ package controller;
 import enums.Currency;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
@@ -32,10 +30,10 @@ public class HomeController implements Initializable {
     private Button btnOpenExchange;
 
     @FXML
-    private ChoiceBox<Currency> cboxFrom;
+    private ComboBox<Currency> cboxFrom;
 
     @FXML
-    private ChoiceBox<Currency> cboxTo;
+    private ComboBox<Currency> cboxTo;
 
     @FXML
     public void handleCurrencyConverter() {
@@ -52,16 +50,24 @@ public class HomeController implements Initializable {
         //TODO - implement handleConvert()
     }
 
-    public void setChoiceBoxes() {
+    public void setComboBoxes() {
         cboxFrom.getItems().setAll(Currency.values());
         cboxTo.getItems().setAll(Currency.values());
         cboxFrom.setConverter(new Currency.CurrencyNameConverter());
         cboxTo.setConverter(new Currency.CurrencyNameConverter());
     }
 
+    public void setImgFromFlag() {
+
+    }
+
+    public void setImgToFlag() {
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setChoiceBoxes();
+        setComboBoxes();
     }
     //TODO - implement flags for imgViews
 }

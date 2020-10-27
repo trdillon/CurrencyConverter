@@ -12,8 +12,8 @@
       <Label layoutX="112.0" layoutY="136.0" styleClass="font-small" text="Convert From" />
       <ImageView fx:id="imgFromFlag" fitHeight="30.0" fitWidth="50.0" layoutX="54.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgToFlag" fitHeight="30.0" fitWidth="50.0" layoutX="354.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
-      <ChoiceBox fx:id="cboxFrom" layoutX="112.0" layoutY="170.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="cboxTo" layoutX="418.0" layoutY="170.0" prefWidth="150.0" />
+      <ComboBox fx:id="cboxFrom" layoutX="112.0" layoutY="170.0" prefWidth="150.0" />
+      <ComboBox fx:id="cboxTo" layoutX="418.0" layoutY="170.0" prefWidth="150.0" />
       <Label layoutX="287.0" layoutY="233.0" styleClass="font-small" text="Convert Using" />
       <Button fx:id="btnOpenExchange" onAction="#handleOpenExchange" layoutX="462.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" styleClass="button-dark" text="OpenExchangeRates" />
       <Button fx:id="btnCurrencyLayer" onAction="#handleCurrencyLayer" layoutX="261.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="169.0" styleClass="button-dark" text="CurrencyLayer" />
