@@ -6,15 +6,18 @@
 
 <AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                <Label layoutX="265.0" layoutY="14.0" styleClass="font-header" text="Home" />
-                <Label layoutX="415.0" layoutY="136.0" styleClass="font-small" text="Convert To" />
-                <Label layoutX="112.0" layoutY="136.0" styleClass="font-small" text="Convert From" />
-                <ImageView fx:id="imgFromFlag" fitHeight="30.0" fitWidth="50.0" layoutX="54.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
-                <ImageView fx:id="imgToFlag" fitHeight="30.0" fitWidth="50.0" layoutX="354.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
-                <ChoiceBox layoutX="112.0" layoutY="170.0" prefWidth="150.0" />
-                <ChoiceBox layoutX="418.0" layoutY="170.0" prefWidth="150.0" />
-                <Button fx:id="btnConvert" layoutX="493.0" layoutY="386.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="123.0" styleClass="button-orange" text="Convert" />
-                <Label fx:id="lblConvertResult" layoutX="195.0" layoutY="258.0" prefHeight="74.0" prefWidth="310.0" styleClass="font-header" text="Results Here" />
-        </AnchorPane>
+   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Label layoutX="281.0" layoutY="14.0" styleClass="font-header" text="Home" />
+      <Label layoutX="415.0" layoutY="136.0" styleClass="font-small" text="Convert To" />
+      <Label layoutX="112.0" layoutY="136.0" styleClass="font-small" text="Convert From" />
+      <ImageView fx:id="imgFromFlag" fitHeight="30.0" fitWidth="50.0" layoutX="54.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgToFlag" fitHeight="30.0" fitWidth="50.0" layoutX="354.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+      <ChoiceBox fx:id="cboxFrom" layoutX="112.0" layoutY="170.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="cboxTo" layoutX="418.0" layoutY="170.0" prefWidth="150.0" />
+      <Label layoutX="287.0" layoutY="233.0" styleClass="font-small" text="Convert Using" />
+      <Button fx:id="btnOpenExchange" onAction="#handleOpenExchange" layoutX="462.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" styleClass="button-dark" text="OpenExchangeRates" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="275.0" />
+      <Button fx:id="btnCurrencyLayer" onAction="#handleCurrencyLayer" layoutX="261.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="169.0" styleClass="button-dark" text="CurrencyLayer" />
+      <Button fx:id="btnCurrencyConverter" onAction="#handleCurrencyConverter" layoutX="43.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="187.0" styleClass="button-dark" text="CurrencyConverterAPI" AnchorPane.leftAnchor="43.0" />
+      <Label fx:id="lblConvertResult" alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="392.0" prefHeight="74.0" prefWidth="310.0" styleClass="font-header" text="Results Here" />
+   </AnchorPane>
 </AnchorPane>

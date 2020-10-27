@@ -44,6 +44,8 @@
    </AnchorPane>
    <AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" BorderPane.alignment="CENTER">
       <BorderPane fx:id="bp" layoutX="245.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+         </center>
       </BorderPane>
    </AnchorPane>
 </AnchorPane>

@@ -68,6 +68,16 @@
 }
 
 /******************** BUTTON STYLING ********************/
+.button-dark {
+    -fx-background-color: #1E272C;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #9ADA45;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
 .button-orange {
     -fx-background-color:
             linear-gradient(#ffd65b, #e68400),
@@ -77,7 +87,7 @@
             linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,2,3,0;
-    -fx-text-fill: #654b00;
+    -fx-text-fill: #1E272C;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
     -fx-padding: 10 20 10 20;

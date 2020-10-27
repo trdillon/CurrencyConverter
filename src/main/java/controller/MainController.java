@@ -17,7 +17,7 @@ public class MainController {
     @FXML
     private FontAwesomeIconView btnExit;
 
-    //TODO - launch HomeView on app start
+    //TODO - launch HomeView on app start or merge HomeView/MainView
     public void loadScreen(String screen) throws IOException {
         Parent root;
         root = FXMLLoader.load(getClass().getResource("/fxml/" + screen + ".fxml"));

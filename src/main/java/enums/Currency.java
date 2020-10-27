@@ -1,5 +1,9 @@
 package enums;
 
+import javafx.util.StringConverter;
+
+import java.util.Arrays;
+
 public enum Currency {
     AED("United Arab Emirates dirham", "uae.png"),
     AFN("Afghan afghani", "afghanistan.png"),
@@ -183,5 +187,23 @@ public enum Currency {
     //TODO - implement imageLoader()
     public String getImageName() {
         return imageName;
+    }
+
+    public static class CurrencyNameConverter extends StringConverter<Currency> {
+        @Override
+        public String toString (Currency currency) {
+            if (currency == null) {
+                return "Please select currency";
+            }
+            return currency.getCurrencyName();
+        }
+
+        @Override
+        public Currency fromString (String string) {
+            return Arrays.stream (Currency.values())
+                    .filter(currency -> currency.currencyName.equalsIgnoreCase(string))
+                    .findFirst()
+                    .orElseThrow();
+        }
     }
 }
