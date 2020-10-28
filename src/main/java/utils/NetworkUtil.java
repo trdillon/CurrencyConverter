@@ -22,9 +22,9 @@ public class NetworkUtil {
         connection.setRequestProperty("Accept", "application/json");
 
         if (connection.getResponseCode() != 200) {
-            Scanner scanner = new Scanner(connection.getErrorStream()).useDelimiter("\\A");
-            String errorMessage = scanner.hasNext() ? scanner.next() : "";
-            throw new ConverterException(ErrorMessages.getNetworkErrorMsg(errorMessage));
+            int responseCode = connection.getResponseCode();
+            String errorMessage = connection.getResponseMessage();
+            throw new ConverterException(ErrorMessages.getNetworkErrorMsg(errorMessage, responseCode));
         }
 
         String results = new BufferedReader(
