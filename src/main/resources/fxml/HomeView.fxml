@@ -15,9 +15,9 @@
       <ComboBox fx:id="cboxFrom" layoutX="112.0" layoutY="170.0" prefWidth="150.0" />
       <ComboBox fx:id="cboxTo" layoutX="418.0" layoutY="170.0" prefWidth="150.0" />
       <Label layoutX="287.0" layoutY="233.0" styleClass="font-small" text="Convert Using" />
-      <Button fx:id="btnOpenExchange" onAction="#handleOpenExchange" layoutX="462.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" styleClass="button-dark" text="OpenExchangeRates" />
-      <Button fx:id="btnCurrencyLayer" onAction="#handleCurrencyLayer" layoutX="261.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="169.0" styleClass="button-dark" text="CurrencyLayer" />
-      <Button fx:id="btnCurrencyConverter" onAction="#handleCurrencyConverter" layoutX="43.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="187.0" styleClass="button-dark" text="CurrencyConverterAPI" />
+      <Button onAction="#handleOpenExchange" layoutX="462.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" styleClass="button-dark" text="OpenExchangeRates" />
+      <Button onAction="#handleCurrencyLayer" layoutX="261.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="169.0" styleClass="button-dark" text="CurrencyLayer" />
+      <Button onAction="#handleCurrencyConverter" layoutX="43.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="187.0" styleClass="button-dark" text="CurrencyConverterAPI" />
       <Label fx:id="lblConvertResult" alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="392.0" prefHeight="74.0" prefWidth="310.0" styleClass="font-header" text="Results Here" />
    </AnchorPane>
 </AnchorPane>

@@ -1,8 +1,6 @@
 package controller;
 
 import enums.Currency;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -21,15 +19,6 @@ public class HomeController implements Initializable {
 
     @FXML
     private Label lblConvertResult;
-
-    @FXML
-    private Button btnCurrencyConverter;
-
-    @FXML
-    private Button btnCurrencyLayer;
-
-    @FXML
-    private Button btnOpenExchange;
 
     @FXML
     private ComboBox<Currency> cboxFrom;
@@ -60,23 +49,13 @@ public class HomeController implements Initializable {
     }
 
     public void setImgFromFlag() {
-        cboxFrom.valueProperty().addListener(new ChangeListener<Currency>() {
-            @Override
-            public void changed(ObservableValue<? extends Currency> observableValue,
-                                Currency oldCurrency, Currency newCurrency) {
-                imgFromFlag.setImage(newCurrency.getCurrencyImage());
-            }
-        });
+        cboxFrom.valueProperty().addListener((observableValue, oldCurrency, newCurrency) ->
+                imgFromFlag.setImage(newCurrency.getCurrencyImage()));
     }
 
     public void setImgToFlag() {
-        cboxTo.valueProperty().addListener(new ChangeListener<Currency>() {
-            @Override
-            public void changed(ObservableValue<? extends Currency> observableValue,
-                                Currency oldCurrency, Currency newCurrency) {
-                imgToFlag.setImage(newCurrency.getCurrencyImage());
-            }
-        });
+        cboxTo.valueProperty().addListener((observableValue, oldCurrency, newCurrency) ->
+                imgToFlag.setImage(newCurrency.getCurrencyImage()));
     }
 
     @Override
