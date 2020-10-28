@@ -176,12 +176,10 @@ public enum Currency {
     ZWL("Zimbabwean dollar", "zimbabwe.png");
 
     private final String currencyName;
-    private final String imageName;
     private final Image currencyImage;
 
-    private Currency(String currencyName, String imageName) {
+    Currency(String currencyName, String imageName) {
         this.currencyName = currencyName;
-        this.imageName = imageName;
 
         String imageFile = "/img/flags/" + imageName;
         try (InputStream in = getClass().getResourceAsStream(imageFile)) {
@@ -197,7 +195,7 @@ public enum Currency {
     public String getCurrencyName() {
         return currencyName;
     }
-    //TODO - fix bitcoin and euro flag images
+    //TODO - fix bitcoin (white background) and euro (too small) flag images
     public Image getCurrencyImage() {
         return this.currencyImage;
     }
@@ -206,7 +204,7 @@ public enum Currency {
         @Override
         public String toString (Currency currency) {
             if (currency == null) {
-                return "Please select currency";
+                return "Please select a currency";
             }
             return currency.getCurrencyName();
         }
