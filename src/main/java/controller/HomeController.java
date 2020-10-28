@@ -2,6 +2,7 @@ package controller;
 
 import api.CurrencyConverter;
 import api.CurrencyLayer;
+import config.Config;
 import enums.Currency;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,7 +37,7 @@ public class HomeController implements Initializable {
         Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
 
         if (fromCurrency != null && toCurrency != null) {
-            String apiKey = "key";
+            String apiKey = Config.keyCurrencyConverter;
             Double results = currencyConverter.rate(apiKey, fromCurrency, toCurrency);
             lblConvertResult.setText(results.toString());
         }
@@ -52,7 +53,7 @@ public class HomeController implements Initializable {
         Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
 
         if (fromCurrency != null && toCurrency != null) {
-            String apiKey = "key";
+            String apiKey = Config.keyCurrencyLayer;
             Double results = currencyLayer.rate(apiKey, fromCurrency, toCurrency);
             lblConvertResult.setText(results.toString());
         }
