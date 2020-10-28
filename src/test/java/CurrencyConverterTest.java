@@ -38,7 +38,6 @@ public class CurrencyConverterTest {
      * Method: rate(String apiKey, Currency from, Currency to)
      *
      */
-    // TODO - test when servers are up, currently 503 service unavailable
     @Test
     void shouldReturnRateEqualToExpected() throws IOException {
         double expected = 7.75;

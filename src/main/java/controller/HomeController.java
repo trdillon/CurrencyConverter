@@ -1,11 +1,14 @@
 package controller;
 
+import api.CurrencyConverter;
+import api.CurrencyLayer;
 import enums.Currency;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,13 +30,35 @@ public class HomeController implements Initializable {
     private ComboBox<Currency> cboxTo;
 
     @FXML
-    public void handleCurrencyConverter() {
-        //TODO - implement handleConvert()
+    public void handleCurrencyConverter() throws IOException {
+        CurrencyConverter currencyConverter = new CurrencyConverter();
+        Currency fromCurrency = cboxFrom.getSelectionModel().getSelectedItem();
+        Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
+
+        if (fromCurrency != null && toCurrency != null) {
+            String apiKey = "key";
+            Double results = currencyConverter.rate(apiKey, fromCurrency, toCurrency);
+            lblConvertResult.setText(results.toString());
+        }
+        else {
+            lblConvertResult.setText("Please select two currencies to convert.");
+        }
     }
 
     @FXML
-    public void handleCurrencyLayer() {
+    public void handleCurrencyLayer() throws IOException {
+        CurrencyLayer currencyLayer = new CurrencyLayer();
+        Currency fromCurrency = cboxFrom.getSelectionModel().getSelectedItem();
+        Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
 
+        if (fromCurrency != null && toCurrency != null) {
+            String apiKey = "key";
+            Double results = currencyLayer.rate(apiKey, fromCurrency, toCurrency);
+            lblConvertResult.setText(results.toString());
+        }
+        else {
+            lblConvertResult.setText("Please select two currencies to convert.");
+        }
     }
 
     @FXML
