@@ -33,7 +33,7 @@ public class HomeController implements Initializable {
 
     @FXML
     public void handleCurrencyLayer() {
-        //TODO - implement handleConvert()
+
     }
 
     @FXML

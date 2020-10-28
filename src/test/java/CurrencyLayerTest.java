@@ -1,9 +1,11 @@
 import api.CurrencyLayer;
 import enums.Currency;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  * CurrencyLayer Tester.
@@ -40,14 +42,14 @@ public class CurrencyLayerTest {
     void shouldReturnRateEqualToExpected() throws IOException {
         double expected = 7.75;
         double actual = currencyLayer.rate(apiKey, USD, HKD);
-        Assertions.assertEquals(expected, actual, TEST_DELTA);
+        assertEquals(expected, actual, TEST_DELTA);
     }
 
     @Test
     void shouldReturnRateNotEqualToExpected() throws IOException {
         double expected = 7.77;
         double actual = currencyLayer.rate(apiKey, USD, HKD);
-        Assertions.assertNotEquals(expected, actual, TEST_DELTA);
+        assertNotEquals(expected, actual, TEST_DELTA);
     }
 
     @Test
@@ -59,28 +61,6 @@ public class CurrencyLayerTest {
 
         double expected = 1.0;
         double actual = USDtoJPY * JPYtoUSD;
-        Assertions.assertEquals(expected, actual, TEST_DELTA);
+        assertEquals(expected, actual, TEST_DELTA);
     }
-
-
-    /**
-     *
-     * Method: getQueryString(String apiKey, Currency from, Currency to)
-     *
-     */
-    @Test
-    public void testGetQueryString() throws Exception {
-//TODO: Test goes here...
-/*
-try {
-   Method method = CurrencyLayer.getClass().getMethod("getQueryString", String.class, Currency.class, Currency.class);
-   method.setAccessible(true);
-   method.invoke(<Object>, <Parameters>);
-} catch(NoSuchMethodException e) {
-} catch(IllegalAccessException e) {
-} catch(InvocationTargetException e) {
-}
-*/
-    }
-
 }
