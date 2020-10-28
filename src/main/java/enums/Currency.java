@@ -190,14 +190,14 @@ public enum Currency {
             this.currencyImage = new Image(in);
         }
         catch (IOException e) {
-            throw new IllegalStateException("Error loading image for currency.", e);
+            throw new IllegalStateException("Error loading images for currencies.", e);
         }
     }
 
     public String getCurrencyName() {
         return currencyName;
     }
-
+    //TODO - fix bitcoin and euro flag images
     public Image getCurrencyImage() {
         return this.currencyImage;
     }

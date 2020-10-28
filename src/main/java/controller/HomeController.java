@@ -1,6 +1,8 @@
 package controller;
 
 import enums.Currency;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -58,15 +60,29 @@ public class HomeController implements Initializable {
     }
 
     public void setImgFromFlag() {
-        //TODO - implement flags for imgViews
+        cboxFrom.valueProperty().addListener(new ChangeListener<Currency>() {
+            @Override
+            public void changed(ObservableValue<? extends Currency> observableValue,
+                                Currency oldCurrency, Currency newCurrency) {
+                imgFromFlag.setImage(newCurrency.getCurrencyImage());
+            }
+        });
     }
 
     public void setImgToFlag() {
-        //TODO - implement flags for imgViews
+        cboxTo.valueProperty().addListener(new ChangeListener<Currency>() {
+            @Override
+            public void changed(ObservableValue<? extends Currency> observableValue,
+                                Currency oldCurrency, Currency newCurrency) {
+                imgToFlag.setImage(newCurrency.getCurrencyImage());
+            }
+        });
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setComboBoxes();
+        setImgFromFlag();
+        setImgToFlag();
     }
 }
