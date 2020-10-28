@@ -69,5 +69,4 @@ public class OpenExchangeRates implements ConverterInterface {
         return "https://openexchangerates.org/api/latest.json?app_id=" + apiKey +
                 "&symbols=" + from + "," + to;
     }
-    //TODO - write tests for this service
 }

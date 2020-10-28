@@ -1,5 +1,9 @@
+import api.CurrencyConverter;
+import enums.Currency;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
 
 /**
  * CurrencyConverter Tester.
@@ -10,6 +14,38 @@ import org.junit.jupiter.api.Test;
  */
 
 public class CurrencyConverterTest {
+
+    private static final String apiKey
+            = "API_KEY_GOES_HERE";
+
+    private static final Currency USD
+            = Currency.USD;
+
+    private static final Currency HKD
+            = Currency.HKD;
+
+    private static final Currency JPY
+            = Currency.JPY;
+
+    private static final double TEST_DELTA = 0.001;
+
+    CurrencyConverter currencyConverter = new CurrencyConverter();
+
+    // TODO - test when servers are up, currently 503 service unavailable
+    @Test
+    void shouldReturnRateEqualToExpected() throws IOException {
+        double expected = 7.75;
+        double actual = currencyConverter.rate(apiKey, USD, HKD);
+        Assertions.assertEquals(expected, actual, TEST_DELTA);
+    }
+
+    @Test
+    void shouldReturnRateNotEqualToExpected() throws IOException {
+        double expected = 7.77;
+        double actual = currencyConverter.rate(apiKey, USD, HKD);
+        Assertions.assertNotEquals(expected, actual, TEST_DELTA);
+    }
+
 
     /**
      *

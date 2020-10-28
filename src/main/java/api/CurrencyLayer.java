@@ -64,6 +64,4 @@ public class CurrencyLayer implements ConverterInterface {
         return "http://api.currencylayer.com/live?access_key=" + apiKey +
                 "&currencies=" + from + "," + to;
     }
-
-    //TODO - write tests for this service
 }
