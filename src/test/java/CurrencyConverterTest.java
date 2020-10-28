@@ -31,6 +31,11 @@ public class CurrencyConverterTest {
 
     CurrencyConverter currencyConverter = new CurrencyConverter();
 
+    /**
+     *
+     * Method: rate(String apiKey, Currency from, Currency to)
+     *
+     */
     // TODO - test when servers are up, currently 503 service unavailable
     @Test
     void shouldReturnRateEqualToExpected() throws IOException {
@@ -46,17 +51,17 @@ public class CurrencyConverterTest {
         Assertions.assertNotEquals(expected, actual, TEST_DELTA);
     }
 
-
-    /**
-     *
-     * Method: rate(String apiKey, Currency from, Currency to)
-     *
-     */
     @Test
     public void testRate() throws Exception {
-//TODO: Test goes here...
-    }
+        double USDtoJPY = currencyConverter.rate(apiKey, USD, JPY);
+        double JPYtoUSD = currencyConverter.rate(apiKey, JPY, USD);
+        System.out.println("US Dollars to Japanese Yen is: " + USDtoJPY);
+        System.out.println("Japanese Yen to US Dollars is: " + JPYtoUSD);
 
+        double expected = 1.0;
+        double actual = USDtoJPY * JPYtoUSD;
+        Assertions.assertEquals(expected, actual, TEST_DELTA);
+    }
 
     /**
      *

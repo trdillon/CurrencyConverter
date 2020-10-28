@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-
 /**
  * CurrencyLayer Tester.
  *
@@ -32,6 +31,11 @@ public class CurrencyLayerTest {
 
     CurrencyLayer currencyLayer = new CurrencyLayer();
 
+    /**
+     *
+     * Method: rate(String apiKey, Currency from, Currency to)
+     *
+     */
     @Test
     void shouldReturnRateEqualToExpected() throws IOException {
         double expected = 7.75;
@@ -46,15 +50,16 @@ public class CurrencyLayerTest {
         Assertions.assertNotEquals(expected, actual, TEST_DELTA);
     }
 
-
-    /**
-     *
-     * Method: rate(String apiKey, Currency from, Currency to)
-     *
-     */
     @Test
-    public void testRate() throws Exception {
-//TODO: Test goes here...
+    void testRate() throws IOException {
+        double USDtoJPY = currencyLayer.rate(apiKey, USD, JPY);
+        double JPYtoUSD = currencyLayer.rate(apiKey, JPY, USD);
+        System.out.println("US Dollars to Japanese Yen is: " + USDtoJPY);
+        System.out.println("Japanese Yen to US Dollars is: " + JPYtoUSD);
+
+        double expected = 1.0;
+        double actual = USDtoJPY * JPYtoUSD;
+        Assertions.assertEquals(expected, actual, TEST_DELTA);
     }
 
 

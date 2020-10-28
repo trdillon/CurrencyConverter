@@ -31,6 +31,11 @@ public class OpenExchangeRatesTest {
 
     OpenExchangeRates openExchangeRates = new OpenExchangeRates();
 
+    /**
+     *
+     * Method: rate(String apiKey, Currency from, Currency to)
+     *
+     */
     @Test
     void shouldReturnRateEqualToExpected() throws IOException {
         double expected = 7.75;
@@ -45,16 +50,18 @@ public class OpenExchangeRatesTest {
         Assertions.assertNotEquals(expected, actual, TEST_DELTA);
     }
 
-    /**
-     *
-     * Method: rate(String apiKey, Currency from, Currency to)
-     *
-     */
+    //TODO - edit rate() to account for base from always being USD
     @Test
-    public void testRate() throws Exception {
-//TODO: Test goes here...
-    }
+    void testRate() throws IOException {
+        double USDtoJPY = openExchangeRates.rate(apiKey, USD, JPY);
+        double JPYtoUSD = openExchangeRates.rate(apiKey, JPY, USD);
+        System.out.println("US Dollars to Japanese Yen is: " + USDtoJPY);
+        System.out.println("Japanese Yen to US Dollars is: " + JPYtoUSD);
 
+        double expected = 1.0;
+        double actual = USDtoJPY * JPYtoUSD;
+        Assertions.assertEquals(expected, actual, TEST_DELTA);
+    }
 
     /**
      *
