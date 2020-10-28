@@ -28,5 +28,4 @@ public class CurrencyConverter implements ConverterInterface {
         return "https://free.currconv.com/api/v7/convert?q=" + from + "_" + to +
                "&compact=ultra&apiKey=" + apiKey;
     }
-    //TODO - write tests for this service
 }
