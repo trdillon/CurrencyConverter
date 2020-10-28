@@ -58,16 +58,15 @@ public class HomeController implements Initializable {
     }
 
     public void setImgFromFlag() {
-
+        //TODO - implement flags for imgViews
     }
 
     public void setImgToFlag() {
-
+        //TODO - implement flags for imgViews
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setComboBoxes();
     }
-    //TODO - implement flags for imgViews
 }

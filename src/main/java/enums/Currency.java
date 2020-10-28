@@ -1,7 +1,10 @@
 package enums;
 
+import javafx.scene.image.Image;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 
 public enum Currency {
@@ -174,19 +177,29 @@ public enum Currency {
 
     private final String currencyName;
     private final String imageName;
+    private final Image currencyImage;
 
     private Currency(String currencyName, String imageName) {
         this.currencyName = currencyName;
         this.imageName = imageName;
+
+        String imageFile = "/img/flags/" + imageName;
+        try (InputStream in = getClass().getResourceAsStream(imageFile)) {
+            if (in == null)
+                throw new IllegalStateException("Image not available for this currency. Error: " + currencyName);
+            this.currencyImage = new Image(in);
+        }
+        catch (IOException e) {
+            throw new IllegalStateException("Error loading image for currency.", e);
+        }
     }
 
     public String getCurrencyName() {
         return currencyName;
     }
 
-    //TODO - implement imageLoader()
-    public String getImageName() {
-        return imageName;
+    public Image getCurrencyImage() {
+        return this.currencyImage;
     }
 
     public static class CurrencyNameConverter extends StringConverter<Currency> {
