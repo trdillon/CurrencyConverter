@@ -4,6 +4,7 @@ import exception.ConverterException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
@@ -29,6 +30,17 @@ public class APIConfigBuilderTest {
             new APIConfigBuilder()
                     .build();
         });
+    }
+
+    @Test
+    void shouldBuildOneAPIKey() {
+        final APIConfig config = new APIConfigBuilder()
+                .buildCurrencyLayer(CURRENCY_LAYER_API_KEY)
+                .build();
+
+        assertNull(config.getApiKeyCurrencyConverter());
+        assertEquals(CURRENCY_LAYER_API_KEY, config.getApiKeyCurrencyLayer());
+        assertNull(config.getApiKeyOpenExchangeRates());
     }
 
     @Test
@@ -59,5 +71,20 @@ public class APIConfigBuilderTest {
         assertEquals(CURRENCY_CONVERTER_NEW_KEY, config.getApiKeyCurrencyConverter());
         assertEquals(CURRENCY_LAYER_NEW_KEY, config.getApiKeyCurrencyLayer());
         assertEquals(OPEN_EXCHANGE_NEW_KEY, config.getApiKeyOpenExchangeRates());
+    }
+
+    @Test
+    void shouldChangeOneAPIKeyOnly() {
+        APIConfig config = new APIConfigBuilder()
+                .buildCurrencyConverter(CURRENCY_CONVERTER_API_KEY)
+                .buildCurrencyLayer(CURRENCY_LAYER_API_KEY)
+                .buildOpenExchange(OPEN_EXCHANGE_API_KEY)
+                .build();
+
+        config.setApiKeyCurrencyLayer(CURRENCY_LAYER_NEW_KEY);
+
+        assertEquals(CURRENCY_CONVERTER_API_KEY, config.getApiKeyCurrencyConverter());
+        assertEquals(CURRENCY_LAYER_NEW_KEY, config.getApiKeyCurrencyLayer());
+        assertEquals(OPEN_EXCHANGE_API_KEY, config.getApiKeyOpenExchangeRates());
     }
 }
