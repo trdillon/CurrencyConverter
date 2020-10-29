@@ -10,7 +10,9 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
@@ -35,11 +37,14 @@ public class HomeController implements Initializable {
         CurrencyConverter currencyConverter = new CurrencyConverter();
         Currency fromCurrency = cboxFrom.getSelectionModel().getSelectedItem();
         Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
+        DecimalFormat decimalFormat = new DecimalFormat("#.####");
+        decimalFormat.setRoundingMode(RoundingMode.CEILING);
 
         if (fromCurrency != null && toCurrency != null) {
             String apiKey = Config.keyCurrencyConverter;
             Double results = currencyConverter.rate(apiKey, fromCurrency, toCurrency);
-            lblConvertResult.setText(results.toString());
+            String formattedResults = decimalFormat.format(results);
+            lblConvertResult.setText(formattedResults);
         }
         else {
             lblConvertResult.setText("Please select two currencies to convert.");
@@ -51,11 +56,14 @@ public class HomeController implements Initializable {
         CurrencyLayer currencyLayer = new CurrencyLayer();
         Currency fromCurrency = cboxFrom.getSelectionModel().getSelectedItem();
         Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
+        DecimalFormat decimalFormat = new DecimalFormat("#.####");
+        decimalFormat.setRoundingMode(RoundingMode.CEILING);
 
         if (fromCurrency != null && toCurrency != null) {
             String apiKey = Config.keyCurrencyLayer;
             Double results = currencyLayer.rate(apiKey, fromCurrency, toCurrency);
-            lblConvertResult.setText(results.toString());
+            String formattedResults = decimalFormat.format(results);
+            lblConvertResult.setText(formattedResults);
         }
         else {
             lblConvertResult.setText("Please select two currencies to convert.");

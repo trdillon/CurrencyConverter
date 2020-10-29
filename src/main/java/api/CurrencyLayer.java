@@ -14,7 +14,6 @@ public class CurrencyLayer implements ConverterInterface {
     @Override
     public Double rate(String apiKey, Currency from, Currency to) throws IOException {
         String results = NetworkUtil.getResultsByUrl(getQueryString(apiKey, from, to), false);
-
         /* expected response is like the following:
             {
                 "success": true,
