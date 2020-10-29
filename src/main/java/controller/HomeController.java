@@ -92,27 +92,27 @@ public class HomeController implements Initializable {
         //TODO - implement handleConvert()
     }
 
-    public void setComboBoxes() {
+    public void initComboBoxes() {
         cboxFrom.getItems().setAll(Currency.values());
         cboxTo.getItems().setAll(Currency.values());
         cboxFrom.setConverter(new Currency.CurrencyNameConverter());
         cboxTo.setConverter(new Currency.CurrencyNameConverter());
     }
 
-    public void setImgFromFlag() {
+    public void initImgFromFlag() {
         cboxFrom.valueProperty().addListener((observableValue, oldCurrency, newCurrency) ->
                 imgFromFlag.setImage(newCurrency.getCurrencyImage()));
     }
 
-    public void setImgToFlag() {
+    public void initImgToFlag() {
         cboxTo.valueProperty().addListener((observableValue, oldCurrency, newCurrency) ->
                 imgToFlag.setImage(newCurrency.getCurrencyImage()));
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setComboBoxes();
-        setImgFromFlag();
-        setImgToFlag();
+        initComboBoxes();
+        initImgFromFlag();
+        initImgToFlag();
     }
 }
