@@ -1,19 +1,26 @@
 package model;
 
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class HistoryRecord {
 
     private String fromCurrency;
     private String toCurrency;
     private String conversionResult;
-    private ZonedDateTime dateOfConversion;
+    private String dateOfConversion;
 
     public HistoryRecord(String fromCurrency, String toCurrency, String conversionResult) {
         this.fromCurrency = fromCurrency;
         this.toCurrency = toCurrency;
         this.conversionResult = conversionResult;
-        this.dateOfConversion = ZonedDateTime.now();
+        this.dateOfConversion = formattedDate();
+    }
+
+    public String formattedDate() {
+        ZonedDateTime timeNow = ZonedDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm:ss Z");
+        return timeNow.format(formatter);
     }
 
     public String getFromCurrency() {
@@ -40,11 +47,11 @@ public class HistoryRecord {
         this.conversionResult = conversionResult;
     }
 
-    public ZonedDateTime getDateOfConversion() {
+    public String getDateOfConversion() {
         return dateOfConversion;
     }
 
-    public void setDateOfConversion(ZonedDateTime dateOfConversion) {
+    public void setDateOfConversion(String dateOfConversion) {
         this.dateOfConversion = dateOfConversion;
     }
 }
