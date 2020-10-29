@@ -27,6 +27,9 @@ public class HomeController implements Initializable {
     private Label lblConvertResult;
 
     @FXML
+    private TextField txtAmount;
+
+    @FXML
     private ComboBox<Currency> cboxFrom;
 
     @FXML
@@ -43,8 +46,15 @@ public class HomeController implements Initializable {
         if (fromCurrency != null && toCurrency != null) {
             String apiKey = Config.keyCurrencyConverter;
             Double results = currencyConverter.rate(apiKey, fromCurrency, toCurrency);
-            String formattedResults = decimalFormat.format(results);
-            lblConvertResult.setText(formattedResults);
+
+            if (!txtAmount.getText().isEmpty()) {
+                results *= Double.parseDouble(txtAmount.getText());
+                String formattedResults = decimalFormat.format(results);
+                lblConvertResult.setText(formattedResults);
+            }
+            else {
+                lblConvertResult.setText("Please enter an amount to convert.");
+            }
         }
         else {
             lblConvertResult.setText("Please select two currencies to convert.");
@@ -62,8 +72,15 @@ public class HomeController implements Initializable {
         if (fromCurrency != null && toCurrency != null) {
             String apiKey = Config.keyCurrencyLayer;
             Double results = currencyLayer.rate(apiKey, fromCurrency, toCurrency);
-            String formattedResults = decimalFormat.format(results);
-            lblConvertResult.setText(formattedResults);
+
+            if (!txtAmount.getText().isEmpty()) {
+                results *= Double.parseDouble(txtAmount.getText());
+                String formattedResults = decimalFormat.format(results);
+                lblConvertResult.setText(formattedResults);
+            }
+            else {
+                lblConvertResult.setText("Please enter an amount to convert.");
+            }
         }
         else {
             lblConvertResult.setText("Please select two currencies to convert.");
