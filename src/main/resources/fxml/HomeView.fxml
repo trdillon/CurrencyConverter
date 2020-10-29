@@ -19,6 +19,6 @@
       <Label layoutX="276.0" layoutY="299.0" styleClass="font-small" text="Source for Conversion" />
       <Button layoutX="379.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleCurrencyLayer" prefHeight="40.0" prefWidth="169.0" styleClass="button-dark" text="CurrencyLayer" />
       <Button layoutX="138.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleCurrencyConverter" prefHeight="40.0" prefWidth="187.0" styleClass="button-dark" text="CurrencyConverterAPI" />
-      <Label fx:id="lblConvertResult" alignment="CENTER" contentDisplay="CENTER" layoutX="17.0" layoutY="392.0" prefHeight="141.0" prefWidth="658.0" styleClass="font-header" text="Results Here" />
+      <Label fx:id="lblConvertResult" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="395.0" prefHeight="118.0" prefWidth="566.0" styleClass="font-results" text="Results Here" visible="false" />
    </AnchorPane>
 </AnchorPane>

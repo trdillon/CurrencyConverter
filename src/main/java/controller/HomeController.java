@@ -53,6 +53,7 @@ public class HomeController implements Initializable {
         else {
             lblConvertResult.setText("Please select two currencies to convert.");
         }
+        lblConvertResult.setVisible(true);
     }
 
     public void handleCurrencyConverter() {

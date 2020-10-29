@@ -67,6 +67,12 @@
     -fx-text-fill: #4A7C7B;
 }
 
+.font-results {
+    -fx-font-family: "Agency FB";
+    -fx-font-size: 36px;
+    -fx-text-fill: #9ADA45;
+}
+
 /******************** BUTTON STYLING ********************/
 .button-dark {
     -fx-background-color: #1E272C;
@@ -133,6 +139,8 @@
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }
+
+/******************** MISC STYLING ********************/
 
 /* TODO - check color scheme with someone who isn't me */
 /* TODO - light theme */

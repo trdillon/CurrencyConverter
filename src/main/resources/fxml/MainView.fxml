@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="main" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <AnchorPane layoutX="352.0" layoutY="6.0" prefHeight="50.0" prefWidth="700.0" styleClass="toolbar" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="561.0" layoutY="7.0" prefHeight="15.0" prefWidth="15.0" styleClass="notify-num" text="1" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="561.0" layoutY="7.0" prefHeight="15.0" prefWidth="15.0" styleClass="notify-num" text="1" visible="false" />
       <Label layoutX="40.0" layoutY="11.0" prefHeight="53.0" prefWidth="420.0" styleClass="font-title" text="Currency Converter" />
       <HBox layoutX="630.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
          <FontAwesomeIconView glyphName="QUESTION_CIRCLE" onMouseClicked="#handleHelp" size="18" styleClass="toolbar-icon" />
