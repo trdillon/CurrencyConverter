@@ -26,8 +26,8 @@ public class MainController {
 
     // Set the stylesheets
     public void setCSS(String style) {
-        mainPane.getStylesheets().removeAll();
-        mainPane.getStylesheets().add(getClass().getResource("/css/Styles.css").toExternalForm());
+        mainPane.getStylesheets().remove("theme-light.css");
+        mainPane.getStylesheets().remove("theme-dark.css");
         mainPane.getStylesheets().add(style);
     }
 }
