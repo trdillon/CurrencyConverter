@@ -24,22 +24,30 @@ public class SettingsController implements Initializable {
     private ComboBox<String> cboxColor;
 
     private void loadConfig() {
-        txtKeyCurrencyConverter.setText(Config.getKeyCurrencyConverter());
-        txtKeyCurrencyLayer.setText(Config.getKeyCurrencyLayer());
-        txtKeyOpenExchange.setText(Config.getKeyOpenExchangeRates());
-    }
-
-    private void saveConfig() {
-
+        try {
+            txtKeyCurrencyConverter.setText(Config.getCurrencyConverterKey());
+            txtKeyCurrencyLayer.setText(Config.getCurrencyLayerKey());
+            txtKeyOpenExchange.setText(Config.getOpenExchangeKey());
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleSave() {
-        //TODO - save function
+        try {
+            Config.setCurrencyConverterKey(txtKeyCurrencyConverter.getText());
+            Config.setCurrencyLayerKey(txtKeyCurrencyLayer.getText());
+            Config.setOpenExchangeRatesKey(txtKeyOpenExchange.getText());
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //TODO - implement init function
+        loadConfig();
     }
 
 }

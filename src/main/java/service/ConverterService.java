@@ -13,7 +13,7 @@ public class ConverterService {
         if (serviceName.equals("CurrencyConverter")) {
             CurrencyConverter currencyConverter = new CurrencyConverter();
             try {
-                return currencyConverter.rate(Config.getKeyCurrencyConverter(), from, to);
+                return currencyConverter.rate(Config.getCurrencyConverterKey(), from, to);
             }
             catch (Exception e) {
                 e.printStackTrace();
@@ -23,7 +23,7 @@ public class ConverterService {
         if (serviceName.equals("CurrencyLayer")) {
             CurrencyLayer currencyLayer = new CurrencyLayer();
             try {
-                return currencyLayer.rate(Config.getKeyCurrencyLayer(), from, to);
+                return currencyLayer.rate(Config.getCurrencyLayerKey(), from, to);
             }
             catch (Exception e) {
                 e.printStackTrace();
