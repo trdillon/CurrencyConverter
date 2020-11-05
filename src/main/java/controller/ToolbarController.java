@@ -6,6 +6,7 @@ import utils.ViewUtil;
 
 public class ToolbarController {
 
+    // Toolbar button handlers
     @FXML
     private void handleHelp() {
         ViewUtil.loadView(ViewUtil.HELP);

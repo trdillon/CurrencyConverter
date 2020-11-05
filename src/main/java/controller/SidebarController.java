@@ -5,6 +5,7 @@ import utils.ViewUtil;
 
 public class SidebarController {
 
+    // Sidebar button handlers
     @FXML
     private void handleHome() {
         ViewUtil.loadView(ViewUtil.HOME);

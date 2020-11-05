@@ -24,10 +24,10 @@ public class MainController {
         mainPane.setLeft(node);
     }
 
-    // Set the stylesheets
+    // Clear themes and add selected theme
     public void setCSS(String style) {
-        mainPane.getStylesheets().removeAll();
-        mainPane.getStylesheets().add(getClass().getResource("/css/Styles.css").toExternalForm());
+        mainPane.getStylesheets().remove("theme-light.css");
+        mainPane.getStylesheets().remove("theme-dark.css");
         mainPane.getStylesheets().add(style);
     }
 }

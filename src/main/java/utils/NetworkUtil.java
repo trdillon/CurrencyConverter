@@ -20,12 +20,14 @@ public class NetworkUtil {
         connection.setRequestMethod("GET");
         connection.setRequestProperty("Accept", "application/json");
 
+        // If we get any response other than OK then throw exception
         if (connection.getResponseCode() != 200) {
             int responseCode = connection.getResponseCode();
             String errorMessage = connection.getResponseMessage();
             throw new ConverterException(ErrorMessages.getNetworkErrorMsg(errorMessage, responseCode));
         }
 
+        // Read the results and return them
         String results = new BufferedReader(
                 new InputStreamReader(
                         connection.getInputStream()))

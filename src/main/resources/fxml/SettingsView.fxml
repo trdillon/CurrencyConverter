@@ -15,7 +15,7 @@
         <TextField fx:id="txtKeyCurrencyLayer" layoutX="36.0" layoutY="230.0" prefHeight="25.0" prefWidth="250.0" />
         <TextField fx:id="txtKeyOpenExchange" layoutX="36.0" layoutY="296.0" prefHeight="25.0" prefWidth="250.0" />
         <Label layoutX="523.0" layoutY="104.0" styleClass="font-small" text="Color Theme" />
-        <ComboBox fx:id="cboxColor" layoutX="494.0" layoutY="164.0" prefWidth="150.0" />
+        <ComboBox fx:id="cboxTheme" layoutX="494.0" layoutY="164.0" prefWidth="150.0" />
         <Button onAction="#handleSave" layoutX="567.0" layoutY="467.0" mnemonicParsing="false" styleClass="button-dark" text="Save" />
     </AnchorPane>
 </AnchorPane>

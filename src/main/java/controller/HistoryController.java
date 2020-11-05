@@ -30,6 +30,7 @@ public class HistoryController implements Initializable {
     @FXML
     private TableColumn<HistoryRecord, ZonedDateTime> tcHistoryDate;
 
+    // Set the table columns with property value factories
     private void initTableColumns() {
         tcHistoryFrom.setCellValueFactory(new PropertyValueFactory<>("fromCurrency"));
         tcHistoryTo.setCellValueFactory(new PropertyValueFactory<>("toCurrency"));
@@ -37,6 +38,7 @@ public class HistoryController implements Initializable {
         tcHistoryDate.setCellValueFactory(new PropertyValueFactory<>("dateOfConversion"));
     }
 
+    // Instantiate CSVUtil and load records in table view
     private void populateRecords() {
         CSVUtil csvUtil = new CSVUtil();
         ObservableList<HistoryRecord> records = csvUtil.loadCSV();

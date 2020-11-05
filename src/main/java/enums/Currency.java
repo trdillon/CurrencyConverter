@@ -181,6 +181,7 @@ public enum Currency {
     Currency(String currencyName, String imageName) {
         this.currencyName = currencyName;
 
+        // Image builder for currency flags
         String imageFile = "/img/flags/" + imageName;
         try (InputStream in = getClass().getResourceAsStream(imageFile)) {
             if (in == null)
@@ -200,6 +201,7 @@ public enum Currency {
         return this.currencyImage;
     }
 
+    // Converter to return currency name String or Currency object
     public static class CurrencyNameConverter extends StringConverter<Currency> {
         @Override
         public String toString (Currency currency) {

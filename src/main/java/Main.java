@@ -25,6 +25,7 @@ public class Main extends Application {
         getPrimaryStage().show();
     }
 
+    // Static stage is used for draggable method
     private static Stage getPrimaryStage() {
         return pStage;
     }
@@ -64,6 +65,7 @@ public class Main extends Application {
         Scene scene = new Scene(mainPane);
         scene.getStylesheets().setAll(getClass().getResource("/css/Styles.css").toExternalForm());
 
+        // Check config for theme and load it
         try {
             String theme = Config.getTheme();
             if (theme.equals("Light")) {

@@ -16,6 +16,7 @@ public class CSVUtil {
         ObservableList<HistoryRecord> records = FXCollections.observableArrayList();
         String FILE_NAME = "/history.csv";
         try {
+            // Read basic csv file with header into stream
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     this.getClass().getResourceAsStream(FILE_NAME)));
             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
@@ -23,6 +24,7 @@ public class CSVUtil {
                     .withIgnoreHeaderCase()
                     .withTrim());
 
+            // Add records from stream into observableList and return it
             for (CSVRecord record : csvParser) {
                 HistoryRecord newRecord = new HistoryRecord(record.get("from"), record.get("to"),
                         record.get("results"));
