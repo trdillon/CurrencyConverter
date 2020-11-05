@@ -46,4 +46,14 @@ public class Config {
         config.setProperty("api.openexchangerates", key);
         configBuilder.save();
     }
+
+    public static String getTheme() throws ConfigurationException {
+        return configBuilder.getConfiguration().getProperty("theme").toString();
+    }
+
+    public static void setTheme(String theme) throws ConfigurationException {
+        Configuration config = configBuilder.getConfiguration();
+        config.setProperty("theme", theme);
+        configBuilder.save();
+    }
 }

@@ -2,18 +2,18 @@ package controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import utils.ViewNavigator;
+import utils.ViewUtil;
 
 public class ToolbarController {
 
     @FXML
     private void handleHelp() {
-        ViewNavigator.loadView(ViewNavigator.HELP);
+        ViewUtil.loadView(ViewUtil.HELP);
     }
 
     @FXML
     private void handleSettings() {
-        ViewNavigator.loadView(ViewNavigator.SETTINGS);
+        ViewUtil.loadView(ViewUtil.SETTINGS);
     }
 
     @FXML
