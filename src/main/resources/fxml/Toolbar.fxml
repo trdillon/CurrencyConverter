@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<AnchorPane prefHeight="50.0" styleClass="toolbar" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ToolbarController">
+    <Label layoutX="40.0" layoutY="1.0" prefHeight="53.0" prefWidth="420.0" styleClass="font-title" text="Currency Converter" />
+    <HBox layoutX="765.0" layoutY="14" styleClass="toolbar-btn">
+        <FontAwesomeIconView glyphName="CLOSE" size="22" styleClass="toolbar-icon" onMouseClicked="#handleExit"/>
+    </HBox>
+    <HBox layoutX="715.0" layoutY="14" styleClass="toolbar-btn">
+        <FontAwesomeIconView glyphName="QUESTION" size="22" styleClass="toolbar-icon" onMouseClicked="#handleHelp"/>
+    </HBox>
+    <HBox layoutX="665.0" layoutY="14" styleClass="toolbar-btn">
+        <FontAwesomeIconView glyphName="GEAR" size="22" styleClass="toolbar-icon" onMouseClicked="#handleSettings"/>
+    </HBox>
+</AnchorPane>

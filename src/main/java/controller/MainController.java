@@ -1,68 +1,26 @@
 package controller;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class MainController {
 
     @FXML
-    private BorderPane bp;
+    private BorderPane mainPane;
 
-    @FXML
-    private FontAwesomeIconView btnExit;
-
-    //TODO - launch HomeView on app start or merge HomeView/MainView
-    public void loadScreen(String screen) throws IOException {
-        Parent root;
-        root = FXMLLoader.load(getClass().getResource("/fxml/" + screen + ".fxml"));
-        bp.setCenter(root);
+    // Center pane handles all views
+    public void setCenter(Node node) {
+        mainPane.setCenter(node);
     }
 
-    @FXML
-    private void handleHelp() throws IOException {
-        loadScreen("HelpView");
+    // Top pane for toolbar
+    public void setTop(Node node) {
+        mainPane.setTop(node);
     }
 
-    @FXML
-    private void handleSettings() throws IOException {
-        loadScreen("SettingsView");
-    }
-
-    @FXML
-    private void handleNotify() throws IOException {
-        loadScreen("NotifyView");
-    }
-
-    @FXML
-    private void handleHome() throws IOException {
-        loadScreen("HomeView");
-    }
-
-    @FXML
-    private void handleHistory() throws IOException {
-        loadScreen("HistoryView");
-    }
-
-    @FXML
-    private void handleFavorites() throws IOException {
-        loadScreen("FavoritesView");
-    }
-
-    @FXML
-    private void handleData() throws IOException {
-        loadScreen("DataView");
-    }
-
-    //TODO - save history data on exit for data analysis
-    @FXML
-    private void handleExit() {
-        Stage stage = (Stage) btnExit.getScene().getWindow();
-        stage.close();
+    // Left pane for sidebar
+    public void setLeft(Node node) {
+        mainPane.setLeft(node);
     }
 }
