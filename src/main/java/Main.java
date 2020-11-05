@@ -1,3 +1,4 @@
+import config.Config;
 import controller.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -5,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import utils.ViewNavigator;
+import utils.ViewUtil;
 
 import java.io.IOException;
 
@@ -36,7 +37,7 @@ public class Main extends Application {
     private Pane loadMainPane() throws IOException {
         FXMLLoader loader = new FXMLLoader();
 
-        Pane mainPane = loader.load(getClass().getResourceAsStream(ViewNavigator.MAIN));
+        Pane mainPane = loader.load(getClass().getResourceAsStream(ViewUtil.MAIN));
 
         // Make the window draggable
         mainPane.setOnMousePressed(event -> {
@@ -51,17 +52,30 @@ public class Main extends Application {
 
 
         MainController mainController = loader.getController();
-        ViewNavigator.setMainController(mainController);
-        ViewNavigator.loadView(ViewNavigator.HOME);
-        ViewNavigator.loadBars();
+        ViewUtil.setMainController(mainController);
+        ViewUtil.loadView(ViewUtil.HOME);
+        ViewUtil.loadBars();
 
         return mainPane;
     }
 
-    // Create the main scene and add stylesheet
+    // Create the main scene and add stylesheets
     private Scene createScene(Pane mainPane) {
         Scene scene = new Scene(mainPane);
         scene.getStylesheets().setAll(getClass().getResource("/css/Styles.css").toExternalForm());
+
+        try {
+            String theme = Config.getTheme();
+            if (theme.equals("Light")) {
+                scene.getStylesheets().add(getClass().getResource("/css/theme-light.css").toExternalForm());
+            }
+            if (theme.equals("Dark")) {
+                scene.getStylesheets().add(getClass().getResource("/css/theme-dark.css").toExternalForm());
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return scene;
     }

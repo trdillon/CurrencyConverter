@@ -1,27 +1,27 @@
 package controller;
 
 import javafx.fxml.FXML;
-import utils.ViewNavigator;
+import utils.ViewUtil;
 
 public class SidebarController {
 
     @FXML
     private void handleHome() {
-        ViewNavigator.loadView(ViewNavigator.HOME);
+        ViewUtil.loadView(ViewUtil.HOME);
     }
 
     @FXML
     private void handleHistory() {
-        ViewNavigator.loadView(ViewNavigator.HISTORY);
+        ViewUtil.loadView(ViewUtil.HISTORY);
     }
 
     @FXML
     private void handleFavorites() {
-        ViewNavigator.loadView(ViewNavigator.FAVS);
+        ViewUtil.loadView(ViewUtil.FAVS);
     }
 
     @FXML
     private void handleData() {
-        ViewNavigator.loadView(ViewNavigator.DATA);
+        ViewUtil.loadView(ViewUtil.DATA);
     }
 }

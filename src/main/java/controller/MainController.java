@@ -23,4 +23,11 @@ public class MainController {
     public void setLeft(Node node) {
         mainPane.setLeft(node);
     }
+
+    // Set the stylesheets
+    public void setCSS(String style) {
+        mainPane.getStylesheets().removeAll();
+        mainPane.getStylesheets().add(getClass().getResource("/css/Styles.css").toExternalForm());
+        mainPane.getStylesheets().add(style);
+    }
 }
