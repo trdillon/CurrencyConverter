@@ -11,27 +11,39 @@ import java.io.File;
 
 public class Config {
 
-    public static String keyCurrencyConverter;
-    public static String keyCurrencyLayer;
-    public static String keyOpenExchangeRates;
+    private static final File CONFIG_FILE = new File("config.properties");
 
-    public static void loadConfig() {
-        Parameters params = new Parameters();
-        File propertiesFile = new File("config.properties");
+    private static final FileBasedConfigurationBuilder<FileBasedConfiguration> configBuilder =
+            new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
+            .configure(new Parameters().fileBased().setFile(CONFIG_FILE));
 
-        FileBasedConfigurationBuilder<FileBasedConfiguration> builder =
-                new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
-                .configure(params.fileBased()
-                .setFile(propertiesFile));
+    public static String getCurrencyConverterKey() throws ConfigurationException {
+        return configBuilder.getConfiguration().getProperty("api.currencyconverter").toString();
+    }
 
-        try {
-            Configuration config = builder.getConfiguration();
-            keyCurrencyConverter = config.getProperty("api.currencyconverter").toString();
-            keyCurrencyLayer = config.getProperty("api.currencylayer").toString();
-            keyOpenExchangeRates = config.getProperty("api.openexchangerates").toString();
-        }
-        catch (ConfigurationException e) {
-            e.printStackTrace();
-        }
+    public static String getCurrencyLayerKey() throws ConfigurationException {
+        return configBuilder.getConfiguration().getProperty("api.currencylayer").toString();
+    }
+
+    public static String getOpenExchangeKey() throws ConfigurationException {
+        return configBuilder.getConfiguration().getProperty("api.openexchangerates").toString();
+    }
+
+    public static void setCurrencyConverterKey(String key) throws ConfigurationException {
+        Configuration config = configBuilder.getConfiguration();
+        config.setProperty("api.currencyconverter", key);
+        configBuilder.save();
+    }
+
+    public static void setCurrencyLayerKey(String key) throws ConfigurationException {
+        Configuration config = configBuilder.getConfiguration();
+        config.setProperty("api.currencylayer", key);
+        configBuilder.save();
+    }
+
+    public static void setOpenExchangeRatesKey(String key) throws ConfigurationException {
+        Configuration config = configBuilder.getConfiguration();
+        config.setProperty("api.openexchangerates", key);
+        configBuilder.save();
     }
 }
