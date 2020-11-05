@@ -1,51 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="main" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
-   <AnchorPane layoutX="352.0" layoutY="6.0" prefHeight="50.0" prefWidth="700.0" styleClass="toolbar" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="561.0" layoutY="7.0" prefHeight="15.0" prefWidth="15.0" styleClass="notify-num" text="1" visible="false" />
-      <Label layoutX="40.0" layoutY="11.0" prefHeight="53.0" prefWidth="420.0" styleClass="font-title" text="Currency Converter" />
-      <HBox layoutX="630.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView glyphName="QUESTION_CIRCLE" onMouseClicked="#handleHelp" size="18" styleClass="toolbar-icon" />
-      </HBox>
-      <HBox layoutX="590.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView glyphName="GEAR" onMouseClicked="#handleSettings" size="18" styleClass="toolbar-icon" />
-      </HBox>
-      <HBox layoutX="550.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView glyphName="BELL" onMouseClicked="#handleNotify" size="18" styleClass="toolbar-icon" />
-      </HBox>
-      <HBox layoutX="670.0" layoutY="14.571428298950195" styleClass="toolbar-btn">
-         <FontAwesomeIconView fx:id="btnExit" glyphName="CLOSE" onMouseClicked="#handleExit" size="18" styleClass="toolbar-icon" />
-      </HBox>
-   </AnchorPane>
-   <AnchorPane layoutY="185.0" prefHeight="200.0" prefWidth="110.0" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="4.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="14.0">
-         <Image url="@../img/logo.png" />
-      </ImageView>
-      <HBox layoutX="38.0" layoutY="200.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView glyphName="HOME" onMouseClicked="#handleHome" size="36" styleClass="sidebar-icon" />
-      </HBox>
-      <HBox layoutX="38.0" layoutY="500.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView glyphName="BAR_CHART" onMouseClicked="#handleData" size="36" styleClass="sidebar-icon" />
-      </HBox>
-      <HBox layoutX="38.0" layoutY="400.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView glyphName="HEART" onMouseClicked="#handleFavorites" size="36" styleClass="sidebar-icon" />
-      </HBox>
-      <HBox layoutX="38.0" layoutY="300.0" styleClass="sidebar-btn">
-         <FontAwesomeIconView glyphName="HISTORY" onMouseClicked="#handleHistory" size="36" styleClass="sidebar-icon" />
-      </HBox>
-   </AnchorPane>
-   <AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" BorderPane.alignment="CENTER">
-      <BorderPane fx:id="bp" layoutX="245.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <center>
-         </center>
-      </BorderPane>
-   </AnchorPane>
-</AnchorPane>
+<BorderPane fx:id="mainPane" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="main"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController" />

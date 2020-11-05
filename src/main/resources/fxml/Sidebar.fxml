@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<AnchorPane prefWidth="110.0" styleClass="sidebar" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.SidebarController">
+    <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="5.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../img/logo.png" />
+    </ImageView>
+    <HBox layoutX="35.0" layoutY="40" styleClass="sidebar-btn">
+        <FontAwesomeIconView glyphName="HOME" size="36" styleClass="sidebar-icon" onMouseClicked="#handleHome"/>
+    </HBox>
+    <HBox layoutX="35.0" layoutY="140" styleClass="sidebar-btn">
+        <FontAwesomeIconView glyphName="HISTORY" size="36" styleClass="sidebar-icon" onMouseClicked="#handleHistory"/>
+    </HBox>
+    <HBox layoutX="35.0" layoutY="240" styleClass="sidebar-btn">
+        <FontAwesomeIconView glyphName="HEART" size="36" styleClass="sidebar-icon" onMouseClicked="#handleFavorites"/>
+    </HBox>
+    <HBox layoutX="35.0" layoutY="340" styleClass="sidebar-btn">
+        <FontAwesomeIconView glyphName="BAR_CHART" size="36" styleClass="sidebar-icon" onMouseClicked="#handleData"/>
+    </HBox>
+</AnchorPane>
