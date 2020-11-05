@@ -11,9 +11,9 @@ import java.io.File;
 
 public class Config {
 
-    public static String keyCurrencyConverter;
-    public static String keyCurrencyLayer;
-    public static String keyOpenExchangeRates;
+    private static String keyCurrencyConverter;
+    private static String keyCurrencyLayer;
+    private static String keyOpenExchangeRates;
 
     public static void loadConfig() {
         Parameters params = new Parameters();
@@ -26,12 +26,36 @@ public class Config {
 
         try {
             Configuration config = builder.getConfiguration();
-            keyCurrencyConverter = config.getProperty("api.currencyconverter").toString();
-            keyCurrencyLayer = config.getProperty("api.currencylayer").toString();
-            keyOpenExchangeRates = config.getProperty("api.openexchangerates").toString();
+            setKeyCurrencyConverter(config.getProperty("api.currencyconverter").toString());
+            setKeyCurrencyLayer(config.getProperty("api.currencylayer").toString());
+            setKeyOpenExchangeRates(config.getProperty("api.openexchangerates").toString());
         }
         catch (ConfigurationException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getKeyCurrencyConverter() {
+        return keyCurrencyConverter;
+    }
+
+    public static void setKeyCurrencyConverter(String keyCurrencyConverter) {
+        Config.keyCurrencyConverter = keyCurrencyConverter;
+    }
+
+    public static String getKeyCurrencyLayer() {
+        return keyCurrencyLayer;
+    }
+
+    public static void setKeyCurrencyLayer(String keyCurrencyLayer) {
+        Config.keyCurrencyLayer = keyCurrencyLayer;
+    }
+
+    public static String getKeyOpenExchangeRates() {
+        return keyOpenExchangeRates;
+    }
+
+    public static void setKeyOpenExchangeRates(String keyOpenExchangeRates) {
+        Config.keyOpenExchangeRates = keyOpenExchangeRates;
     }
 }

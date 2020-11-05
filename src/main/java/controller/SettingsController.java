@@ -1,5 +1,6 @@
 package controller;
 
+import config.Config;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -21,6 +22,16 @@ public class SettingsController implements Initializable {
 
     @FXML
     private ComboBox<String> cboxColor;
+
+    private void loadConfig() {
+        txtKeyCurrencyConverter.setText(Config.getKeyCurrencyConverter());
+        txtKeyCurrencyLayer.setText(Config.getKeyCurrencyLayer());
+        txtKeyOpenExchange.setText(Config.getKeyOpenExchangeRates());
+    }
+
+    private void saveConfig() {
+
+    }
 
     public void handleSave() {
         //TODO - save function
