@@ -24,10 +24,11 @@ public class SettingsController implements Initializable {
     private TextField txtKeyOpenExchange;
 
     @FXML
-    private ComboBox<String> cboxColor;
+    private ComboBox<String> cboxTheme;
 
     private final ObservableList<String> listThemes = FXCollections.observableArrayList();
 
+    // Get the API keys from config
     private void initConfig() {
         try {
             txtKeyCurrencyConverter.setText(Config.getCurrencyConverterKey());
@@ -39,25 +40,27 @@ public class SettingsController implements Initializable {
         }
     }
 
+    // Fill the combo box with themes, selecting the theme saved in config.properties as default
     private void initColorBox() {
         listThemes.add("Dark");
         listThemes.add("Light");
-        cboxColor.setItems(listThemes);
+        cboxTheme.setItems(listThemes);
         try {
-            cboxColor.getSelectionModel().select(Config.getTheme());
+            cboxTheme.getSelectionModel().select(Config.getTheme());
         }
         catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    // Save current vals to config and return to home view
     public void handleSave() {
         try {
             Config.setCurrencyConverterKey(txtKeyCurrencyConverter.getText());
             Config.setCurrencyLayerKey(txtKeyCurrencyLayer.getText());
             Config.setOpenExchangeRatesKey(txtKeyOpenExchange.getText());
-            Config.setTheme(cboxColor.getSelectionModel().getSelectedItem());
-            ViewUtil.changeCSS(cboxColor.getSelectionModel().getSelectedItem());
+            Config.setTheme(cboxTheme.getSelectionModel().getSelectedItem());
+            ViewUtil.changeCSS(cboxTheme.getSelectionModel().getSelectedItem());
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -70,5 +73,4 @@ public class SettingsController implements Initializable {
         initConfig();
         initColorBox();
     }
-
 }

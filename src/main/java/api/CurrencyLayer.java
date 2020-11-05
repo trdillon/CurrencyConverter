@@ -14,7 +14,7 @@ public class CurrencyLayer implements ConverterInterface {
     @Override
     public Double rate(String apiKey, Currency from, Currency to) throws IOException {
         String results = NetworkUtil.getResultsByUrl(getQueryString(apiKey, from, to), false);
-        /* expected response is like the following:
+        /* Expected response is like the following:
             {
                 "success": true,
                 "terms": "https://currencylayer.com/terms",
@@ -31,12 +31,12 @@ public class CurrencyLayer implements ConverterInterface {
             so we split at 'quotes":' to parse the results
          */
         final String[] parseResults = results.split("quotes\":");
-        // if the API response changes or doesn't return an expected response then throw service exception
+        // If the API response changes or doesn't return an expected response then throw service exception
         if (parseResults.length != 2) {
             throw new ConverterException(ErrorMessages.getServiceUnavailableMsg(SERVICE_NAME));
         }
 
-        // further parse the results to isolate the numbers we want
+        // Further parse the results to isolate the numbers we want
         final String[] parseResultsMore = parseResults[1].split(",");
         if (parseResultsMore.length != 2) {
             throw new ConverterException(ErrorMessages.getServiceUnavailableMsg(SERVICE_NAME));
@@ -59,6 +59,7 @@ public class CurrencyLayer implements ConverterInterface {
         }
     }
 
+    // Build the URL query for API call
     private String getQueryString(String apiKey, Currency from, Currency to) {
         return "http://api.currencylayer.com/live?access_key=" + apiKey +
                 "&currencies=" + from + "," + to;

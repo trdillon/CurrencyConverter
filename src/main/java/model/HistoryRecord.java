@@ -17,6 +17,7 @@ public class HistoryRecord {
         this.dateOfConversion = formattedDate();
     }
 
+    // Format ZDT.now so its a little more readable
     public String formattedDate() {
         ZonedDateTime timeNow = ZonedDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm:ss Z");

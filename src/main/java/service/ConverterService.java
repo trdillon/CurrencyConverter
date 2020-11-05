@@ -8,7 +8,7 @@ import exception.ConverterException;
 import exception.ErrorMessages;
 
 public class ConverterService {
-
+    //TODO - create rate() with currency array param for OpenExchangesRates call
     public Double rate(String serviceName, Currency from, Currency to) {
         if (serviceName.equals("CurrencyConverter")) {
             CurrencyConverter currencyConverter = new CurrencyConverter();

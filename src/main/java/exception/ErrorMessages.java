@@ -2,6 +2,7 @@ package exception;
 
 public class ErrorMessages {
 
+    //TODO - remove unused messages, ensure correct messages are being displayed
     public static final String API_KEY_ERROR = "The API key being used is invalid or not entered. Please check the " +
             "settings page to ensure your API key is correct.";
 

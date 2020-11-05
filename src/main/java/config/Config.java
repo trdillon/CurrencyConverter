@@ -13,6 +13,7 @@ public class Config {
 
     private static final File CONFIG_FILE = new File("config.properties");
 
+    // Create configBuilder object which will handle access/manipulation of all config properties
     private static final FileBasedConfigurationBuilder<FileBasedConfiguration> configBuilder =
             new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
             .configure(new Parameters().fileBased().setFile(CONFIG_FILE));

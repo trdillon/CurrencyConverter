@@ -10,12 +10,12 @@ import java.io.IOException;
 public class OpenExchangeRates implements ConverterInterface {
 
     public static final String SERVICE_NAME = "OpenExchangeRates.com";
-
+    //TODO - refactor rate() to account for API call returning list compared to USD base
     @Override
     public Double rate(String apiKey, Currency from, Currency to) throws IOException {
         String results = NetworkUtil.getResultsByUrl(getQueryString(apiKey, from, to), true);
 
-        /* expected response is like the following:
+        /* Expected response is like the following:
             {
                 disclaimer: "https://openexchangerates.org/terms/",
                 license: "https://openexchangerates.org/license/",
@@ -35,12 +35,12 @@ public class OpenExchangeRates implements ConverterInterface {
                 so we split at 'rates:' to parse the results
          */
         final String[] parseResults = results.split("rates\":");
-        // if the API response changes or doesn't return an expected response then throw service exception
+        // If the API response changes or doesn't return an expected response then throw service exception
         if (parseResults.length != 2) {
             throw new ConverterException(ErrorMessages.getServiceUnavailableMsg(SERVICE_NAME));
         }
 
-        // further parse the results to isolate the numbers we want
+        // Further parse the results to isolate the numbers we want
         final String[] parseResultsMore = parseResults[1].split(",");
         if (parseResultsMore.length != 2) {
             throw new ConverterException(ErrorMessages.getServiceUnavailableMsg(SERVICE_NAME));
@@ -65,6 +65,7 @@ public class OpenExchangeRates implements ConverterInterface {
         }
     }
 
+    // Build the URL query for API call
     private String getQueryString (String apiKey, Currency from, Currency to) {
         return "https://openexchangerates.org/api/latest.json?app_id=" + apiKey +
                 "&symbols=" + from + "," + to;
