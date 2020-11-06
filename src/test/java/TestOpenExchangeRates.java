@@ -15,9 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  * @version 1.1
  */
 
-public class OpenExchangeRatesTest {
+public class TestOpenExchangeRates {
 
-    private static final String apiKey
+    private static final String APIKEY
             = "API_KEY_GOES_HERE";
 
     private static final Currency USD
@@ -41,22 +41,22 @@ public class OpenExchangeRatesTest {
     @Test
     void shouldReturnRateEqualToExpected() throws IOException {
         double expected = 7.75;
-        double actual = openExchangeRates.rate(apiKey, USD, HKD);
+        double actual = openExchangeRates.rate(APIKEY, USD, HKD);
         assertEquals(expected, actual, TEST_DELTA);
     }
 
     @Test
     void shouldReturnRateNotEqualToExpected() throws IOException {
         double expected = 7.77;
-        double actual = openExchangeRates.rate(apiKey, USD, HKD);
+        double actual = openExchangeRates.rate(APIKEY, USD, HKD);
         assertNotEquals(expected, actual, TEST_DELTA);
     }
 
     //TODO - edit rate() to account for base from always being USD
     @Test
     void testRate() throws IOException {
-        double USDtoJPY = openExchangeRates.rate(apiKey, USD, JPY);
-        double JPYtoUSD = openExchangeRates.rate(apiKey, JPY, USD);
+        double USDtoJPY = openExchangeRates.rate(APIKEY, USD, JPY);
+        double JPYtoUSD = openExchangeRates.rate(APIKEY, JPY, USD);
         System.out.println("US Dollars to Japanese Yen is: " + USDtoJPY);
         System.out.println("Japanese Yen to US Dollars is: " + JPYtoUSD);
 
