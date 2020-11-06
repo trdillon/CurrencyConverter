@@ -37,20 +37,15 @@ public class HomeController implements Initializable {
     // Convert a pair of currencies
     private void pairConvert(String serviceName) {
         ConverterService converterService = new ConverterService();
+        HistoryRecord record = new HistoryRecord();
         Currency fromCurrency = cboxFrom.getSelectionModel().getSelectedItem();
         Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
-
-        // Create a new HistoryRecord for this conversion
-        HistoryRecord record = new HistoryRecord();
-        record.setFromCurrency(fromCurrency.getCurrencyName());
-        record.setToCurrency(toCurrency.getCurrencyName());
 
         // Format the result to max 4 digits after the decimal
         DecimalFormat decimalFormat = new DecimalFormat("#.####");
         decimalFormat.setRoundingMode(RoundingMode.CEILING);
 
         // Make sure we have two separate currencies and an amount to convert
-        //TODO - fix bug with null currencies
         if (fromCurrency != null && toCurrency != null) {
             if (!txtAmount.getText().isEmpty()) {
                 if (!(fromCurrency == toCurrency)) {
@@ -59,6 +54,8 @@ public class HomeController implements Initializable {
                     Double results = (ratio * Double.parseDouble(txtAmount.getText()));
                     String formattedResults = decimalFormat.format(results);
                     lblConvertResult.setText(formattedResults);
+                    record.setFromCurrency(fromCurrency.getCurrencyName());
+                    record.setToCurrency(toCurrency.getCurrencyName());
                     record.setConversionResult(formattedRatio);
                     CSVUtil.addRecord(record);
                 }
