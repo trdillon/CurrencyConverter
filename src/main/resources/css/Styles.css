@@ -1,9 +1,9 @@
 .main {
-    -fx-background-color: #263238;
+    -fx-background-color: main-bg-color;
 }
 /******************** SIDEBAR STYLING ********************/
 .sidebar {
-    -fx-background-color: #1E272C;
+    -fx-background-color: sidebar-bg-color;
 }
 
 .sidebar-btn {
@@ -11,17 +11,16 @@
 }
 
 .sidebar-btn:hover {
-    -fx-border-color:  #9ADA45;
+    -fx-border-color:  hover-color;
     -fx-border-radius: 0px 0px 0px 2px;
 }
 
 .sidebar-icon {
-    -fx-fill: #4A7C7B;
+    -fx-fill: sidebar-icon-color;
 }
-
 /******************** TOOLBAR STYLING ********************/
 .toolbar {
-    -fx-background-color: #1E272C;
+    -fx-background-color: toolbar-bg-color;
 }
 
 .toolbar-btn {
@@ -29,56 +28,45 @@
 }
 
 .toolbar-btn:hover {
-    -fx-border-color:  #9ADA45;
+    -fx-border-color:  hover-color;
     -fx-border-radius: 0px 0px 0px 2px;
 }
 
 .toolbar-icon {
-    -fx-fill: #4A7C7B;
-    -fx-font-size: 18px;
-}
-
-.notify-num {
-    -fx-background-color: #F02E54;
-    -fx-background-radius: 100%;
-    -fx-text-fill: #FFF;
-    -fx-font-family: "System";
-    -fx-font-weight: Bold;
-    -fx-font-size: 10px;
+    -fx-fill: toolbar-icon-color;
 }
 /******************** FONT STYLING ********************/
 .font-small {
     -fx-font-family: "System";
     -fx-font-size: 16px;
-    -fx-text-fill: #4A7C7B;
-    -fx-fill: #4A7C7B;
+    -fx-text-fill: font-color;
+    -fx-fill: font-color;
 }
 
 .font-header {
     -fx-font-family: "Agency FB";
     -fx-font-size: 36px;
-    -fx-text-fill: #4A7C7B;
+    -fx-text-fill: font-color;
 }
 
 .font-title {
     -fx-font-family: "Agency FB";
     -fx-font-weight: Bold;
     -fx-font-size: 36px;
-    -fx-text-fill: #4A7C7B;
+    -fx-text-fill: font-color;
 }
 
 .font-results {
     -fx-font-family: "Agency FB";
     -fx-font-size: 36px;
-    -fx-text-fill: #9ADA45;
+    -fx-text-fill: results-color;
 }
-
 /******************** BUTTON STYLING ********************/
 .button-dark {
-    -fx-background-color: #1E272C;
+    -fx-background-color: button-bg-color;
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,2,3,0;
-    -fx-text-fill: #9ADA45;
+    -fx-text-fill: button-font-color;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
     -fx-padding: 10 20 10 20;
@@ -98,20 +86,19 @@
     -fx-font-size: 14px;
     -fx-padding: 10 20 10 20;
 }
-
 /******************** TABLE STYLING ********************/
 .table-view {
     -fx-background-color: transparent;
-    -fx-border-color: #4A7C7B;
+    -fx-border-color: table-border-color;
 }
 
 .table-view .column-header-background {
-    -fx-background-color: linear-gradient(#263238 0%, #4A7C7B 100%);
+    -fx-background-color: table-header-gradient;
 }
 
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
-    -fx-text-fill: white;
+    -fx-text-fill: table-font-color;
 }
 
 .table-view .column-header {
@@ -119,28 +106,24 @@
 }
 
 .table-view .table-cell{
-    -fx-text-fill: white;
+    -fx-text-fill: table-font-color;
 }
 
 .table-row-cell{
-    -fx-background-color: -fx-table-cell-border-color, #263238;
+    -fx-background-color: -fx-table-cell-border-color, table-cell-color-1;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
 
 .table-row-cell:odd{
-    -fx-background-color: -fx-table-cell-border-color, #1E272C;
+    -fx-background-color: -fx-table-cell-border-color, table-cell-color-2;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #4A7C7B;
+    -fx-background-color: table-cell-color-selected;
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }
-
 /******************** MISC STYLING ********************/
-
-/* TODO - check color scheme with someone who isn't me */
-/* TODO - light theme */
