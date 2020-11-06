@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HelpController">
-   <Label layoutX="296.0" layoutY="14.0" styleClass="font-header" text="About" />
-   <Text layoutX="49.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0"
-         styleClass="font-small" text="Currency Converter 1.0.3" wrappingWidth="227.98046875"/>
-   <Text layoutX="49.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-small"
-         text="Made by Tim Dillon"/>
-   <Text layoutX="49.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-small"
-         text="http://github.com/trdillon/CurrencyConverter"/>
-   <Text layoutX="49.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-small"
-         text="Please report any bugs or feature suggestions to the issues section on GitHub"/>
+<AnchorPane fx:id="ap" layoutX="300.0" layoutY="194.0" prefHeight="550.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HelpController">
+   <Label layoutX="300" layoutY="15" styleClass="font-header" text="About" />
+   <Text layoutX="50" layoutY="100" styleClass="font-small" text="Currency Converter 1.0.3" />
+   <Text layoutX="50" layoutY="120" styleClass="font-small" text="Made by Tim Dillon" />
+   <Hyperlink layoutX="50" layoutY="140" onAction="#handleGithub" styleClass="font-small" text="Check out the project on GitHub" />
+   <Text layoutX="50" layoutY="200" styleClass="font-small" text="Please report any bugs or feature suggestions to the issues section on GitHub" />
+   <Text layoutX="50" layoutY="260" styleClass="font-small" text="This application requires you to use your own API keys." />
+   <Text layoutX="50" layoutY="280" styleClass="font-small" text="Please sign up for free at the following sites to get your API keys:" />
+   <Hyperlink layoutX="50" layoutY="300" onAction="#handleCurrencyConverter" styleClass="font-small" text="Free Currency Converter API" />
+   <Hyperlink layoutX="50" layoutY="320" onAction="#handleCurrencyLayer" styleClass="font-small" text="Currency Layer" />
+   <Hyperlink layoutX="50" layoutY="340" onAction="#handleOpenExchangeRates" styleClass="font-small" text="Open Exchange Rates" />
+   <Text layoutX="50" layoutY="480" styleClass="font-fine" text="DISCLAIMER: Currency Converter is not affiliated with nor endorses any of the sites or companies listed above." />
+   <Text layoutX="50" layoutY="490" styleClass="font-fine" text="Currency Converter is a free application that requires users to provide their own API keys for use." />
+   <Text layoutX="50" layoutY="500" styleClass="font-fine" text="Use of API keys is subject to the terms and conditions as outlined by each individual API provider." />
 </AnchorPane>

@@ -21,6 +21,7 @@ public class Main extends Application {
         setPrimaryStage(primaryStage);
         getPrimaryStage().setTitle("Currency Converter");
         getPrimaryStage().initStyle(StageStyle.UNDECORATED);
+        getPrimaryStage().getProperties().put("hostServices", this.getHostServices());
         getPrimaryStage().setScene(createScene(loadMainPane()));
         getPrimaryStage().show();
     }

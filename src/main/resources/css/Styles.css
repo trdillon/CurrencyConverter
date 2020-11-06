@@ -61,6 +61,13 @@
     -fx-font-size: 36px;
     -fx-text-fill: results-color;
 }
+
+.font-fine {
+    -fx-font-family: "System";
+    -fx-font-size: 8px;
+    -fx-text-fill: font-color;
+    -fx-fill: font-color;
+}
 /******************** BUTTON STYLING ********************/
 .button-dark {
     -fx-background-color: button-bg-color;
