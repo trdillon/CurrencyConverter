@@ -65,5 +65,6 @@ public class Config {
         config.setProperty("api.currencylayer", "key");
         config.setProperty("api.openexchangerates", "key");
         config.setProperty("theme", "Dark");
+        configBuilder.save();
     }
 }
