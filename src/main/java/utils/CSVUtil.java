@@ -53,7 +53,8 @@ public class CSVUtil {
             // Create a writer and get the CSV file to append
             BufferedWriter writer = Files.newBufferedWriter(
                     Paths.get(CSVUtil.class.getResource(FILE_NAME).toURI()),
-                    StandardOpenOption.APPEND);
+                    StandardOpenOption.APPEND,
+                    StandardOpenOption.CREATE);
             CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);
 
             csvPrinter.printRecord(from, to, results, time);

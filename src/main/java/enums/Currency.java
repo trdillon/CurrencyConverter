@@ -196,7 +196,7 @@ public enum Currency {
     public String getCurrencyName() {
         return currencyName;
     }
-    //TODO - fix bitcoin (white background) and euro (too small) flag images
+
     public Image getCurrencyImage() {
         return this.currencyImage;
     }
