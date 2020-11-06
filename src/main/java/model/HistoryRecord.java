@@ -8,7 +8,7 @@ public class HistoryRecord {
     private String fromCurrency;
     private String toCurrency;
     private String conversionResult;
-    private String dateOfConversion;
+    private final String dateOfConversion;
 
     public HistoryRecord(String fromCurrency, String toCurrency, String conversionResult) {
         this.fromCurrency = fromCurrency;
@@ -17,10 +17,14 @@ public class HistoryRecord {
         this.dateOfConversion = formattedDate();
     }
 
+    public HistoryRecord() {
+        this.dateOfConversion = formattedDate();
+    }
+
     // Format ZDT.now so its a little more readable
     public String formattedDate() {
         ZonedDateTime timeNow = ZonedDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm:ss Z");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm:ss");
         return timeNow.format(formatter);
     }
 
@@ -50,9 +54,5 @@ public class HistoryRecord {
 
     public String getDateOfConversion() {
         return dateOfConversion;
-    }
-
-    public void setDateOfConversion(String dateOfConversion) {
-        this.dateOfConversion = dateOfConversion;
     }
 }
