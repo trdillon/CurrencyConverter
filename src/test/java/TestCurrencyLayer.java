@@ -1,23 +1,23 @@
-import api.CurrencyConverter;
+import api.CurrencyLayer;
 import enums.Currency;
 import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-
 /**
- * CurrencyConverter Tester.
+ * CurrencyLayer Tester.
  *
  * @author Tim
  * @since Oct 28, 2020
  * @version 1.1
  */
 
-public class CurrencyConverterTest {
+public class TestCurrencyLayer {
 
-    private static final String apiKey
+    private static final String APIKEY
             = "API_KEY_GOES_HERE";
 
     private static final Currency USD
@@ -31,7 +31,7 @@ public class CurrencyConverterTest {
 
     private static final double TEST_DELTA = 0.001;
 
-    CurrencyConverter currencyConverter = new CurrencyConverter();
+    CurrencyLayer currencyLayer = new CurrencyLayer();
 
     /**
      *
@@ -41,21 +41,21 @@ public class CurrencyConverterTest {
     @Test
     void shouldReturnRateEqualToExpected() throws IOException {
         double expected = 7.75;
-        double actual = currencyConverter.rate(apiKey, USD, HKD);
+        double actual = currencyLayer.rate(APIKEY, USD, HKD);
         assertEquals(expected, actual, TEST_DELTA);
     }
 
     @Test
     void shouldReturnRateNotEqualToExpected() throws IOException {
         double expected = 7.77;
-        double actual = currencyConverter.rate(apiKey, USD, HKD);
+        double actual = currencyLayer.rate(APIKEY, USD, HKD);
         assertNotEquals(expected, actual, TEST_DELTA);
     }
 
     @Test
-    public void testRate() throws Exception {
-        double USDtoJPY = currencyConverter.rate(apiKey, USD, JPY);
-        double JPYtoUSD = currencyConverter.rate(apiKey, JPY, USD);
+    void testRate() throws IOException {
+        double USDtoJPY = currencyLayer.rate(APIKEY, USD, JPY);
+        double JPYtoUSD = currencyLayer.rate(APIKEY, JPY, USD);
         System.out.println("US Dollars to Japanese Yen is: " + USDtoJPY);
         System.out.println("Japanese Yen to US Dollars is: " + JPYtoUSD);
 

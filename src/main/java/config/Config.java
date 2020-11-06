@@ -57,4 +57,13 @@ public class Config {
         config.setProperty("theme", theme);
         configBuilder.save();
     }
+
+    // Method to set default values for testing or new config files
+    public static void setDefault() throws ConfigurationException {
+        Configuration config = configBuilder.getConfiguration();
+        config.setProperty("api.currencyconverter", "key");
+        config.setProperty("api.currencylayer", "key");
+        config.setProperty("api.openexchangerates", "key");
+        config.setProperty("theme", "Dark");
+    }
 }
