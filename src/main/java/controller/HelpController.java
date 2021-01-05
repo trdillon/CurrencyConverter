@@ -25,7 +25,7 @@ public class HelpController {
     }
 
     public void handleGithub() {
-        openURL("http://github.com/trdillon/CurrencyConverter");
+        openURL("http://github.com/trdillon/currency-converter");
     }
 
     public void handleCurrencyConverter() {

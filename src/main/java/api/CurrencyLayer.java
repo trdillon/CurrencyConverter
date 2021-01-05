@@ -10,6 +10,7 @@ import java.io.IOException;
 public class CurrencyLayer implements ConverterInterface {
 
     public static final String SERVICE_NAME = "CurrencyLayer.com";
+    
     @Override
     public Double rate(String apiKey, Currency from, Currency to) throws IOException {
         String results = NetworkUtil.getResultsByUrl(getQueryString(apiKey, from, to), false);

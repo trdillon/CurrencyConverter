@@ -54,7 +54,6 @@ public class ViewUtil {
         if (style.equals("Dark")) {
             mainController.setCSS(ViewUtil.class.getResource(DARK_THEME).toExternalForm());
         }
-
         if (style.equals("Light")) {
           mainController.setCSS(ViewUtil.class.getResource(LIGHT_THEME).toExternalForm());
         }
