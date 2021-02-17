@@ -23,7 +23,7 @@ public class NetworkUtil {
 
         // If we get any response other than OK then throw exception
         if (connection.getResponseCode() != 200) {
-            int responseCode = connection.getResponseCode(); //TODO - add handlers for different response codes
+            int responseCode = connection.getResponseCode(); //TODO - add exceptions for different response codes
             String errorMessage = connection.getResponseMessage();
             throw new ConverterException(ErrorMessages.getNetworkErrorMsg(errorMessage, responseCode));
         }
