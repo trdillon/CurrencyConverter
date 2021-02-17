@@ -20,8 +20,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         setPrimaryStage(primaryStage);
         getPrimaryStage().setTitle("Currency Converter");
-        getPrimaryStage().initStyle(StageStyle.UNDECORATED);
-        getPrimaryStage().getProperties().put("hostServices", this.getHostServices());
+        getPrimaryStage().initStyle(StageStyle.UNDECORATED); // no Windows border
+        getPrimaryStage().getProperties().put("hostServices", this.getHostServices()); // inject for opening links in browser
         getPrimaryStage().setScene(createScene(loadMainPane()));
         getPrimaryStage().show();
     }

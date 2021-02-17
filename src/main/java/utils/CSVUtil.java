@@ -43,7 +43,7 @@ public class CSVUtil {
         return records;
     }
 
-    public static void addRecord(HistoryRecord record) {
+    public void addRecord(HistoryRecord record) {
         String from = record.getFromCurrency();
         String to = record.getToCurrency();
         String results = record.getConversionResult();

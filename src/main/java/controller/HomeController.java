@@ -37,6 +37,7 @@ public class HomeController implements Initializable {
     // Convert a pair of currencies
     private void pairConvert(String serviceName) {
         ConverterService converterService = new ConverterService();
+        CSVUtil csvUtil = new CSVUtil();
         HistoryRecord record = new HistoryRecord();
         Currency fromCurrency = cboxFrom.getSelectionModel().getSelectedItem();
         Currency toCurrency = cboxTo.getSelectionModel().getSelectedItem();
@@ -54,10 +55,11 @@ public class HomeController implements Initializable {
                     Double results = (ratio * Double.parseDouble(txtAmount.getText()));
                     String formattedResults = decimalFormat.format(results);
                     lblConvertResult.setText(formattedResults);
+                    // Create the record
                     record.setFromCurrency(fromCurrency.getCurrencyName());
                     record.setToCurrency(toCurrency.getCurrencyName());
                     record.setConversionResult(formattedRatio);
-                    CSVUtil.addRecord(record);
+                    csvUtil.addRecord(record);
                 }
                 else {
                     lblConvertResult.setText("Please select two different currencies to convert.");
